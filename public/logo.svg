@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="44" viewBox="0 0 160 44">
+  <rect width="160" height="44" rx="8" fill="#0b1b16" stroke="#10b981"/>
+  <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle"
+        font-family="system-ui, -apple-system, Segoe UI, Roboto" font-size="16" fill="#e7e7ea">
+    Board It!
+  </text>
+</svg>
