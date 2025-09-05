@@ -115,41 +115,83 @@ body {
   }
 }
 
-/* === Landing overrides === */
+/* === Landing overrides (replace this whole section) === */
 :root {
-  --topbar-h: 64px;
+  --topbar-h: 64px; /* height of the Sign in bar */
 }
 
+/* Make the page truly black and prevent any vertical scrolling */
+html,
+body {
+  height: 100%;
+  background: #000; /* pure black to match the logo */
+  overflow: hidden; /* no page scroll */
+}
+
+/* Top bar with Sign in on the right */
 .topbar {
   height: var(--topbar-h);
   display: flex;
   align-items: center;
-  justify-content: flex-end; /* puts Sign in on the right */
+  justify-content: flex-end;
   padding: 0 24px;
+  position: relative;
+  z-index: 2;
 }
 
 .topbar a {
-  color: var(--text); /* white on dark */
+  color: #fff;
   text-decoration: none;
   font-weight: 600;
 }
 
+/* Center the logo and keep it inside the viewport without overflow */
 .main-centered {
-  min-height: calc(100vh - var(--topbar-h) - 56px); /* room for footer */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 32px 0;
+  height: calc(100svh - var(--topbar-h)); /* fill the screen under the topbar */
+  display: grid;
+  place-items: center;
+  padding: 0; /* no extra vertical padding */
+  overflow: hidden; /* guard against image overflow */
+  position: relative;
+  z-index: 1;
 }
 
-.brandLogo {
-  width: min(600px, 80vw);
-  height: auto;
+/* === Force Next/Image wrapper + image to the new size === */
+:root {
+  /* target width for the logo (≈50% of what you had) */
+  --logo-w: clamp(260px, 46vw, 640px);
+}
+
+/* Next/Image renders: <span style="..."><img class="brandLogo" .../></span>
+   This targets that wrapper so it scales with the image. */
+.main-centered :where(span):has(> img.brandLogo) {
+  width: var(--logo-w) !important;
+  height: auto !important;
   display: block;
+  overflow: visible;
 }
 
-/* Footer left-aligned (override existing rule) */
+/* The image itself */
+img.brandLogo {
+  width: 100% !important; /* fill the wrapper */
+  height: auto !important;
+  max-width: var(--logo-w);
+  object-fit: contain;
+  filter: drop-shadow(0 0 18px rgba(0, 180, 255, 0.12))
+    drop-shadow(0 0 26px rgba(255, 10, 120, 0.06));
+}
+
+/* Footer stays bottom-left but inside the screen, no extra height added */
 .footer {
+  position: absolute;
+  left: 16px;
+  bottom: 12px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  color: #9ca3af; /* subtle gray */
+  font-size: 12px;
+  z-index: 2;
   justify-content: flex-start;
 }
 
@@ -190,4 +232,34 @@ body::before {
 .footer {
   position: relative;
   z-index: 1;
+}
+
+/* === Landing logo sizing (paste at end of globals.css) ==================== */
+
+/* target width for the logo (~50% of the current on-screen size) */
+:root {
+  /* tweak the middle 42vw if you want it larger/smaller */
+  --logo-w: clamp(260px, 42vw, 720px);
+}
+
+/* keep the hero area from creating scrollbars */
+.main-centered {
+  overflow: hidden;
+}
+
+/* Next/Image renders a wrapper <span style="position:relative; ...">.
+   This forces that wrapper to our new width so it can't overflow. */
+.main-centered :where(span):has(> img.brandLogo) {
+  width: var(--logo-w) !important;
+  height: auto !important;
+  display: block;
+  overflow: visible;
+}
+
+/* Make the image fill the (now smaller) wrapper */
+img.brandLogo {
+  width: 100% !important;
+  max-width: var(--logo-w) !important;
+  height: auto !important;
+  display: block;
 }
