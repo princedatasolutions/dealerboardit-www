@@ -152,3 +152,42 @@ body {
 .footer {
   justify-content: flex-start;
 }
+
+/* === Site background tuned to logo backdrop (matches logo) === */
+:root {
+  --site-bg: #0b0f14; /* deep navy/black behind the logo */
+  --logo-spill-1: rgba(18, 36, 64, 0.24); /* inner blue glow */
+  --logo-spill-2: rgba(14, 28, 50, 0.14); /* outer soft glow */
+}
+
+html,
+body {
+  background: var(--site-bg);
+}
+
+/* soft radial “neon” spill so the PNG blends with the page */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+      1200px 900px at 50% 42%,
+      var(--logo-spill-1),
+      transparent 60%
+    ),
+    radial-gradient(
+      1600px 1200px at 50% 55%,
+      var(--logo-spill-2),
+      transparent 70%
+    );
+  z-index: 0;
+}
+
+/* ensure content sits above the background overlay */
+.topbar,
+.main-centered,
+.footer {
+  position: relative;
+  z-index: 1;
+}
