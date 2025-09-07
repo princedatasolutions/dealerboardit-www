@@ -7,9 +7,13 @@ export default function Home() {
     <>
       {/* Top bar with SIGN IN */}
       <header className="topbar">
-        <Link href="/auth/login" className="sign-in">
-          Sign in
-        </Link>
+        <a
+  href="https://app.dealerboardit.com/auth/login"
+  className="rounded-full px-5 py-2.5 border border-white/30 hover:border-pink-400 hover:shadow-[0_0_20px_rgba(236,72,153,0.8)] transition"
+>
+  SIGN IN
+</a>
+
       </header>
 
       <main className="shell">
