@@ -1,265 +1,335 @@
-:root {
-  --bg: #0a0a0a;
-  --panel: #111215;
-  --text: #e7e7ea;
-  --muted: #a1a1aa;
-  --accent: #10b981;
-  --border: #1f232b;
-}
-* {
+/* src/app/globals.css */
+
+@import "tailwindcss";
+
+/* ---------- Minimal reset ---------- */
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 html,
 body {
   height: 100%;
-}
-body {
   margin: 0;
-  background: var(--bg);
-  color: var(--text);
-  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu,
-    Cantarell, Noto Sans, "Helvetica Neue", Arial;
-}
-.container {
-  max-width: 1120px;
-  margin: 0 auto;
-  padding: 24px;
-}
-.hero {
-  display: grid;
-  gap: 18px;
-  padding: 48px 0 32px;
-}
-.logo {
-  height: 44px;
-}
-.badge {
-  display: inline-flex;
-  gap: 8px;
-  align-items: center;
-  font-size: 12px;
-  color: var(--muted);
-  border: 1px solid var(--border);
-  background: #0f1013;
-  border-radius: 999px;
-  padding: 6px 10px;
-}
-.title {
-  font-size: clamp(28px, 4vw, 44px);
-  line-height: 1.1;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-}
-.lead {
-  color: var(--muted);
-  font-size: 16px;
-  max-width: 60ch;
-}
-.ctaRow {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin-top: 6px;
-}
-.button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 12px 16px;
-  border-radius: 12px;
-  border: 1px solid var(--accent);
-  color: var(--text);
-  text-decoration: none;
-}
-.button.primary {
-  background: #0b1b16;
-}
-.button:hover {
-  background: #0f1512;
-}
-.features {
-  margin-top: 28px;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 12px;
-}
-.card {
-  border: 1px solid var(--border);
-  background: var(--panel);
-  border-radius: 16px;
-  padding: 18px;
-}
-.card h3 {
-  margin: 0 0 6px;
-  font-size: 16px;
-}
-.card p {
-  margin: 0;
-  color: var(--muted);
-  font-size: 14px;
-}
-.footer {
-  margin-top: 36px;
-  padding: 24px 0;
-  border-top: 1px solid var(--border);
-  color: var(--muted);
-  font-size: 12px;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-@media (max-width: 900px) {
-  .features {
-    grid-template-columns: 1fr;
-  }
 }
 
-/* === Landing overrides (replace this whole section) === */
+/* ---------- Theme tokens (updated to your sampled colors) ---------- */
 :root {
-  --topbar-h: 64px; /* height of the Sign in bar */
+  /* Keep the page pure black so the PNG blends perfectly */
+  --page-bg: #000000;
+
+  /* Neon palette (from your Digital Color Meter) */
+  /* Logo-accurate tubes + halos */
+  --neon-car-blue: #57beed; /* sampled from logo tube (R87 G190 B237) */
+  --neon-blue: var(--neon-car-blue); /* alias for crosshair lines */
+  /* Deeper tube blue (reduces green cast), keep #57beed for bloom */
+  --neon-car-blue-core: #397bc6; /* R57 G123 B198 — saturated tube */
+  --neon-car-blue-bloom: var(--neon-car-blue); /* lighter outer bloom */
+
+  /* Board It! pinks (from your Digital Color Meter) */
+  --neon-pink-core: #d17cab; /* R209 G124 B171 — darker tube color */
+  --neon-pink-bloom: #f8d1f7; /* R248 G209 B247 — soft bloom */
+
+  --neon-blue-soft: #6dd6ff; /* blue bloom companion */
+  --neon-pink: #ff4dd2; /* Board It! tube pink (core) */
+  --neon-on: #ffd4f4; /* softer ON pink (for very light states) */
+  --ice-blue: #cfe9ff; /* captions (keep) */
+  --halo-white: #e8eef7; /* white halo for $0 tile */
+
+  /* App green for the SIGN IN hover (same as emerald-400) */
+  --brand-green: #34d399;
+
+  /* layout + text */
+  --ink: #ececec;
+  --topbar-h: 56px;
+  --footer-h: 32px;
+  --pad: 24px;
+  --pad-lg: 40px;
+  --maxw: 1200px;
 }
 
-/* Make the page truly black and prevent any vertical scrolling */
+/* Page base */
 html,
 body {
-  height: 100%;
-  background: #000; /* pure black to match the logo */
-  overflow: hidden; /* no page scroll */
+  background: var(--page-bg);
+  color: var(--ink);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased; /* ← add */
+  -moz-osx-font-smoothing: grayscale; /* ← add */
 }
 
-/* Top bar with Sign in on the right */
+/* ---------- Header ---------- */
 .topbar {
   height: var(--topbar-h);
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding: 0 24px;
-  position: relative;
-  z-index: 2;
+  padding: 0 var(--pad);
 }
 
-.topbar a {
+/* SIGN IN link styled to match your app button on hover */
+.topbar .sign-in {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.5rem 0.9rem;
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  border-radius: 9999px;
   color: #fff;
   text-decoration: none;
-  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 400;
+  transition: color 0.2s, border-color 0.2s, box-shadow 0.2s,
+    background-color 0.2s;
+}
+.topbar .sign-in:hover,
+.topbar .sign-in:focus-visible {
+  color: var(--brand-green);
+  border-color: var(--brand-green);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--brand-green) 35%, transparent);
+  outline: none;
+}
+.topbar .sign-in:active {
+  transform: translateY(1px);
 }
 
-/* Center the logo and keep it inside the viewport without overflow */
-.main-centered {
-  height: calc(100svh - var(--topbar-h)); /* fill the screen under the topbar */
+/* ---------- Two-column shell ---------- */
+.shell {
+  min-height: calc(100dvh - var(--topbar-h) - var(--footer-h));
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: var(--pad);
+  display: grid;
+  gap: clamp(16px, 3vw, 48px);
+  grid-template-columns: 1fr; /* mobile: stack */
+  align-items: center;
+}
+@media (min-width: 1024px) {
+  .shell {
+    padding: var(--pad-lg);
+    grid-template-columns: 1fr 420px;
+  }
+}
+
+/* Left (logo) */
+.left {
   display: grid;
   place-items: center;
-  padding: 0; /* no extra vertical padding */
-  overflow: hidden; /* guard against image overflow */
-  position: relative;
-  z-index: 1;
 }
-
-/* === Force Next/Image wrapper + image to the new size === */
-:root {
-  /* target width for the logo (≈50% of what you had) */
-  --logo-w: clamp(260px, 46vw, 640px);
-}
-
-/* Next/Image renders: <span style="..."><img class="brandLogo" .../></span>
-   This targets that wrapper so it scales with the image. */
-.main-centered :where(span):has(> img.brandLogo) {
-  width: var(--logo-w) !important;
-  height: auto !important;
+.logo {
+  width: clamp(260px, 45vw, 680px);
+  height: auto;
   display: block;
-  overflow: visible;
+  image-rendering: auto;
+}
+@media (max-width: 768px) {
+  .logo {
+    width: min(80vw, 420px);
+  }
 }
 
-/* The image itself */
-img.brandLogo {
-  width: 100% !important; /* fill the wrapper */
-  height: auto !important;
-  max-width: var(--logo-w);
-  object-fit: contain;
-  filter: drop-shadow(0 0 18px rgba(0, 180, 255, 0.12))
-    drop-shadow(0 0 26px rgba(255, 10, 120, 0.06));
+/* Right (content area) */
+.right {
+  display: grid;
+  place-items: start;
 }
 
-/* Footer stays bottom-left but inside the screen, no extra height added */
+/* ---------- Footer ---------- */
 .footer {
-  position: absolute;
-  left: 16px;
-  bottom: 12px;
-  margin: 0;
-  padding: 0;
-  border: 0;
-  color: #9ca3af; /* subtle gray */
+  height: var(--footer-h);
+  display: flex;
+  align-items: center;
+  padding: 0 var(--pad);
   font-size: 12px;
-  z-index: 2;
-  justify-content: flex-start;
+  opacity: 0.85;
 }
 
-/* === Site background tuned to logo backdrop (matches logo) === */
-:root {
-  --site-bg: #0b0f14; /* deep navy/black behind the logo */
-  --logo-spill-1: rgba(18, 36, 64, 0.24); /* inner blue glow */
-  --logo-spill-2: rgba(14, 28, 50, 0.14); /* outer soft glow */
+/* ---------- Neon utilities used by the 4-square ---------- */
+.text-ice {
+  color: var(--ice-blue);
+  text-shadow: 0 0 10px rgb(from var(--ice-blue) r g b / 0.15);
+}
+.text-neon-pink {
+  color: var(--neon-pink);
+  text-shadow: 0 0 10px rgb(from var(--neon-pink) r g b / 0.35),
+    0 0 22px rgb(from var(--neon-pink) r g b / 0.18);
 }
 
-html,
-body {
-  background: var(--site-bg);
-}
-
-/* soft radial “neon” spill so the PNG blends with the page */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  background: radial-gradient(
-      1200px 900px at 50% 42%,
-      var(--logo-spill-1),
-      transparent 60%
-    ),
-    radial-gradient(
-      1600px 1200px at 50% 55%,
-      var(--logo-spill-2),
-      transparent 70%
-    );
-  z-index: 0;
-}
-
-/* ensure content sits above the background overlay */
-.topbar,
-.main-centered,
-.footer {
+/* ---------- Four-Square (transparent & responsive) ---------- */
+.fs-grid {
   position: relative;
-  z-index: 1;
+  width: 100%;
+  max-width: 520px;
+  aspect-ratio: 1/1;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  gap: clamp(10px, 1.8vw, 18px);
+  padding: clamp(10px, 1.6vw, 16px);
 }
 
-/* === Landing logo sizing (paste at end of globals.css) ==================== */
+/* ─────────────────────────────────────────────
+   Four-square tiles: borderless idle, glow on hover/focus
+   ───────────────────────────────────────────── */
 
-/* target width for the logo (~50% of the current on-screen size) */
-:root {
-  /* tweak the middle 42vw if you want it larger/smaller */
-  --logo-w: clamp(260px, 42vw, 720px);
+/* IDLE: no border, no shadow — just content */
+.fs-tile {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 8px;
+
+  padding: clamp(10px, 1.6vw, 16px);
+  border-radius: 16px;
+
+  background: transparent; /* seamless on the black page */
+  border: none; /* ← no frame when idle */
+  box-shadow: none; /* ← no glow when idle */
+
+  transition: border-color 0.18s ease, box-shadow 0.18s ease,
+    transform 0.18s ease;
 }
 
-/* keep the hero area from creating scrollbars */
-.main-centered {
-  overflow: hidden;
+/* Inner soft vignette (off by default) */
+.fs-tile::before {
+  content: "";
+  position: absolute;
+  inset: 12px;
+  border-radius: 12px;
+  opacity: 0; /* hidden until hover/focus */
+  box-shadow: none;
+  pointer-events: none;
+  transition: opacity 0.18s ease, box-shadow 0.18s ease;
 }
 
-/* Next/Image renders a wrapper <span style="position:relative; ...">.
-   This forces that wrapper to our new width so it can't overflow. */
-.main-centered :where(span):has(> img.brandLogo) {
-  width: var(--logo-w) !important;
-  height: auto !important;
-  display: block;
-  overflow: visible;
+/* INTERACTION: show the blue frame + glow */
+.fs-tile:hover,
+.fs-tile:focus-visible {
+  transform: translateY(-1px);
+  /* neon pink frame like the logo tube */
+  border: 1px solid var(--neon-pink-core);
+  /* tight pink bloom; no wide flashlight haze */
+  box-shadow: 0 0 6px rgb(from var(--neon-pink-bloom) r g b / 0.55),
+    0 0 14px rgb(from var(--neon-pink-bloom) r g b / 0.35),
+    0 0 28px rgb(from var(--neon-pink-bloom) r g b / 0.25);
 }
 
-/* Make the image fill the (now smaller) wrapper */
-img.brandLogo {
-  width: 100% !important;
-  max-width: var(--logo-w) !important;
-  height: auto !important;
-  display: block;
+.fs-tile:hover::before,
+.fs-tile:focus-visible::before {
+  opacity: 0; /* no interior vignette */
+  box-shadow: none;
+}
+
+/* (Optional) respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .fs-tile {
+    transition: none;
+  }
+  .fs-tile::before {
+    transition: none;
+  }
+}
+
+/* DEALER-style: solid black letters with a tight white halo */
+/* DEALER-style tube (black) with car-blue halo that hugs the edge */
+.fs-accent {
+  color: #0a0a0a;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  line-height: 1;
+  font-size: clamp(1.76rem, 3.52vw + 0.33rem, 2.475rem);
+
+  /* crisp rim so the glow reads at the letter edge, not the wall */
+  -webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.5);
+
+  /* inner white + saturated tube core + lighter blue bloom */
+  text-shadow: 0 0 1px rgba(255, 255, 255, 0.7),
+    0 0 1.5px rgb(from var(--neon-car-blue-core) r g b / 0.95),
+    0 0 3px rgb(from var(--neon-car-blue-core) r g b / 0.7),
+    0 0 6px rgb(from var(--neon-car-blue-bloom) r g b / 0.45);
+
+  /* kill broad wall-glow */
+  filter: none;
+
+  transition: -webkit-text-stroke 160ms ease, text-shadow 160ms ease;
+}
+
+/* Turn numbers ON when the tile is hovered/focused */
+.fs-tile:hover .fs-accent,
+.fs-tile:focus-visible .fs-accent {
+  color: #0a0a0a;
+  -webkit-text-stroke: 0.8px rgba(255, 255, 255, 0.85);
+  text-shadow: 0 0 2px rgba(255, 255, 255, 0.9),
+    0 0 3px rgb(from var(--neon-car-blue-core) r g b / 1),
+    0 0 6px rgb(from var(--neon-car-blue-core) r g b / 0.85),
+    0 0 12px rgb(from var(--neon-car-blue-bloom) r g b / 0.6);
+  filter: none;
+}
+
+/* Label copy — smaller, cleaner */
+.fs-note {
+  color: var(--ice-blue);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  line-height: 1.12;
+  /* ↓ shrink vs. before, but still readable */
+  font-size: clamp(0.66rem, 0.88vw + 0.352rem, 0.77rem);
+
+  text-shadow: 0 0 6px rgb(from var(--ice-blue) r g b / 0.18),
+    0 0 12px rgb(from var(--ice-blue) r g b / 0.1);
+}
+
+/* Crosshair lines — thinner + softer so borders don’t double up */
+.fs-divider {
+  pointer-events: none;
+  position: absolute;
+  inset: clamp(10px, 1.6vw, 16px);
+  border-radius: 12px;
+  background-clip: padding-box; /* prevents edge antialiasing from looking like a rim */
+
+  background: linear-gradient(
+      to right,
+      transparent calc(50% - 0.5px),
+      rgb(from var(--neon-blue) r g b / 0.7) calc(50% - 0.5px),
+      rgb(from var(--neon-blue) r g b / 0.7) calc(50% + 0.5px),
+      transparent calc(50% + 0.5px)
+    ),
+    linear-gradient(
+      to bottom,
+      transparent calc(50% - 0.5px),
+      rgb(from var(--neon-blue) r g b / 0.7) calc(50% - 0.5px),
+      rgb(from var(--neon-blue) r g b / 0.7) calc(50% + 0.5px),
+      transparent calc(50% + 0.5px)
+    );
+  /* Remove outer glow to eliminate the faint border */
+  /* Remove outer glow to eliminate faint outer border */
+  /* No glow at all so the canvas is pure black unless hovering a tile */
+  box-shadow: none;
+}
+
+/* White neon for the $0 tile */
+.fs-accent--white {
+  color: #fff;
+  -webkit-text-stroke: 0.35px rgba(255, 255, 255, 0.55);
+  text-shadow: 0 0 2px #fff, 0 0 10px var(--halo-white),
+    0 0 24px var(--halo-white);
+  filter: drop-shadow(0 0 8px var(--halo-white))
+    drop-shadow(0 0 18px rgb(232 238 247 / 0.45));
+}
+
+/* Keep the white-neon $0 consistent on hover/focus */
+.fs-tile:hover .fs-accent--white,
+.fs-tile:focus-visible .fs-accent--white {
+  color: #fff;
+  -webkit-text-stroke: 0.35px rgba(255, 255, 255, 0.55);
+  text-shadow: 0 0 2px #fff, 0 0 10px var(--halo-white),
+    0 0 24px var(--halo-white);
+  filter: drop-shadow(0 0 8px var(--halo-white))
+    drop-shadow(0 0 18px rgb(232 238 247 / 0.45));
 }
