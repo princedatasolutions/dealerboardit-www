@@ -1,6 +1,5 @@
 // src/app/page.tsx
 import Image from "next/image";
-import Link from "next/link";
 
 export default function Home() {
   return (
@@ -8,12 +7,11 @@ export default function Home() {
       {/* Top bar with SIGN IN */}
       <header className="topbar">
         <a
-  href="https://app.dealerboardit.com/auth/login"
-  className="rounded-full px-5 py-2.5 border border-white/30 hover:border-pink-400 hover:shadow-[0_0_20px_rgba(236,72,153,0.8)] transition"
->
-  SIGN IN
-</a>
-
+          href="https://app.dealerboardit.com/auth/login"
+          className="rounded-full px-5 py-2.5 border border-white/30 hover:border-pink-400 hover:shadow-[0_0_20px_rgba(236,72,153,0.8)] transition"
+        >
+          SIGN IN
+        </a>
       </header>
 
       <main className="shell">
@@ -37,7 +35,6 @@ export default function Home() {
             {/* TL */}
             <div className="fs-tile">
               <span className="fs-accent fs-accent--white fs-amount">$0</span>
-
               <span className="fs-note">Start-up Fees</span>
             </div>
 
