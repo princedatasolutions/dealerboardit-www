@@ -102,25 +102,11 @@ export default function Home() {
             </p>
           </section>
 
-          <section className="section" id="seo">
-            <h2>SEO</h2>
-            <ul>
-              <li>Fast Next.js site with clean metadata & OpenGraph</li>
-              <li>Optional public pages per store/complex/region/group</li>
-              <li>Schema-ready copy blocks for search clarity</li>
-            </ul>
-          </section>
-
-          <section className="section" id="geo">
-            <h2>GEO</h2>
-            <ul>
-              <li>Multi-store hierarchy: Group → Region → Complex → Store</li>
-              <li>Filter down (or up) based on user access level</li>
-              <li>Roll-up KPIs by any tier in one click</li>
-            </ul>
-          </section>
-
-          <section className="section wide" id="screenshots">
+          <section
+            className="section wide"
+            id="screenshots"
+            style={{ marginTop: "12px" }}
+          >
             <h2>Screenshots</h2>
             <div className="shots">
               <div className="shot">
