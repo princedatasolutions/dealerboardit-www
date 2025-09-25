@@ -34,9 +34,11 @@ export async function POST(req: NextRequest) {
       utm_medium: json.utm_medium ? String(json.utm_medium) : null,
       utm_campaign: json.utm_campaign ? String(json.utm_campaign) : null,
       user_agent: req.headers.get("user-agent"),
-      ip_address: (req.headers.get("x-forwarded-for") || req.ip || "")
-        .split(",")[0]
-        .trim(),
+      ip_address: (() => {
+        const xf = req.headers.get("x-forwarded-for");
+        if (!xf) return null;
+        return xf.split(",")[0].trim();
+      })(),
     };
 
     // Minimal validation
