@@ -84,9 +84,10 @@ export default function LeadFormModal({
       setDone("ok");
       // Optional: close automatically after a pause
       setTimeout(() => onClose(), 1200);
-    } catch (err: any) {
+    } catch (err: unknown) {
       setDone("err");
-      setErrorText(err?.message || "Something went wrong.");
+      const msg = err instanceof Error ? err.message : "Something went wrong.";
+      setErrorText(msg);
     } finally {
       setSubmitting(false);
     }
