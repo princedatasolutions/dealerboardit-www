@@ -64,7 +64,11 @@ export default function Home() {
               aria-label="Monthly plan"
             >
               <span className="fs-accent fs-amount">$369</span>
-              <span className="fs-note">Monthly</span>
+              <span className="fs-note">
+                Monthly
+                <br />
+                <small className="opacity-70">(Single Store)</small>
+              </span>
             </button>
 
             {/* BL */}
@@ -93,12 +97,18 @@ export default function Home() {
               <span className="fs-note">
                 Yearly
                 <br />2 Months FREE!
+                <br />
+                <small className="opacity-70">(Single Store)</small>
               </span>
             </button>
 
             {/* grid crosshair lines (pure CSS) */}
             <div className="fs-divider" aria-hidden="true" />
           </div>
+
+          <p className="mt-6 text-center text-sm text-slate-400">
+            (Select Your Payment Plan)
+          </p>
         </aside>
       </main>
 
