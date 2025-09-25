@@ -1,7 +1,21 @@
+"use client";
+
 // src/app/page.tsx
+import { useState } from "react";
 import Image from "next/image";
+import LeadFormModal from "@/components/LeadFormModal";
+
+type LeadPlan = "monthly" | "yearly" | "multi_store";
 
 export default function Home() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [planSelected, setPlanSelected] = useState<LeadPlan>("monthly");
+
+  function openModal(plan: LeadPlan) {
+    setPlanSelected(plan);
+    setIsOpen(true);
+  }
+
   return (
     <>
       {/* Top bar with SIGN IN */}
@@ -17,7 +31,6 @@ export default function Home() {
       <main className="shell">
         {/* Left: Logo */}
         <section className="left">
-          {/* Sized by width/height + CSS (not fill) */}
           <Image
             src="/logonobackround.png"
             alt="Dealerboardit"
@@ -33,35 +46,55 @@ export default function Home() {
         <aside className="right">
           <div className="fs-grid" role="group" aria-label="Pricing overview">
             {/* TL */}
-            <div className="fs-tile">
+            <button
+              type="button"
+              className="fs-tile"
+              onClick={() => openModal("monthly")}
+              aria-label="$0 start-up fees"
+            >
               <span className="fs-accent fs-accent--white fs-amount">$0</span>
               <span className="fs-note">Start-up Fees</span>
-            </div>
+            </button>
 
             {/* TR */}
-            <div className="fs-tile">
+            <button
+              type="button"
+              className="fs-tile"
+              onClick={() => openModal("monthly")}
+              aria-label="Monthly plan"
+            >
               <span className="fs-accent fs-amount">$369</span>
               <span className="fs-note">Monthly</span>
-            </div>
+            </button>
 
             {/* BL */}
-            <div className="fs-tile">
+            <button
+              type="button"
+              className="fs-tile"
+              onClick={() => openModal("multi_store")}
+              aria-label="Monthly discount with multi-stores"
+            >
               <span className="fs-accent fs-amount">$36.9</span>
               <span className="fs-note">
                 Monthly Discount
                 <br />
                 with Multi-Stores
               </span>
-            </div>
+            </button>
 
             {/* BR */}
-            <div className="fs-tile">
+            <button
+              type="button"
+              className="fs-tile"
+              onClick={() => openModal("yearly")}
+              aria-label="Yearly plan - 2 months free"
+            >
               <span className="fs-accent fs-amount">$3,690</span>
               <span className="fs-note">
                 Yearly
                 <br />2 Months FREE!
               </span>
-            </div>
+            </button>
 
             {/* grid crosshair lines (pure CSS) */}
             <div className="fs-divider" aria-hidden="true" />
@@ -70,6 +103,12 @@ export default function Home() {
       </main>
 
       <footer className="footer">© 2025 Dealer Board It LLC</footer>
+
+      <LeadFormModal
+        open={isOpen}
+        planSelected={planSelected}
+        onClose={() => setIsOpen(false)}
+      />
     </>
   );
 }
