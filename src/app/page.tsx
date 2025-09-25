@@ -57,7 +57,7 @@ export default function Home() {
                 <span className="fs-note">
                   Start-up Fees
                   <br />
-                  <small className="opacity-70">(& Choose Your Payment)</small>
+                  <small className="opacity-70">(With Any Plan)</small>
                 </span>
               </button>
 
@@ -87,7 +87,7 @@ export default function Home() {
                 <span className="fs-note">
                   Monthly Discount
                   <br />
-                  <small className="opacity-70">(Multi-store Discount)</small>
+                  <small className="opacity-70">(Multi-store)</small>
                 </span>
               </button>
 
@@ -112,7 +112,7 @@ export default function Home() {
             </div>
 
             <p className="mt-6 text-center text-sm text-slate-400">
-              (Select Your Payment Plan)
+              (Select Your Subcription)
             </p>
           </div>
         </aside>
