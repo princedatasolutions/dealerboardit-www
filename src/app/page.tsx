@@ -54,7 +54,11 @@ export default function Home() {
                 aria-label="$0 start-up fees"
               >
                 <span className="fs-accent fs-accent--white fs-amount">$0</span>
-                <span className="fs-note">Start-up Fees</span>
+                <span className="fs-note">
+                  Start-up Fees
+                  <br />
+                  <small className="opacity-70">(& Choose Your Payment)</small>
+                </span>
               </button>
 
               {/* TR */}
@@ -83,7 +87,7 @@ export default function Home() {
                 <span className="fs-note">
                   Monthly Discount
                   <br />
-                  with Multi-Stores
+                  <small className="opacity-70">(Multi-store Discount)</small>
                 </span>
               </button>
 
