@@ -69,7 +69,7 @@ export default function Home() {
         </aside>
       </main>
 
-      <footer className="footer">© 2025 Dealerboardit</footer>
+      <footer className="footer">© 2025 Dealer Board It LLC</footer>
     </>
   );
 }
