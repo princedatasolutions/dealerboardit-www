@@ -43,9 +43,14 @@ export default function Home() {
         </section>
 
         {/* Right: Four-Square */}
-        <aside className="right">
-          <div className="flex flex-col items-center">
-            <div className="fs-grid" role="group" aria-label="Pricing overview">
+        <aside className="right flex justify-center">
+          {/* constrain + center on mobile, full on larger screens */}
+          <div className="flex w-full max-w-[520px] flex-col items-center px-4 sm:max-w-[620px] lg:max-w-none">
+            <div
+              className="fs-grid mx-auto"
+              role="group"
+              aria-label="Pricing overview"
+            >
               {/* TL */}
               <button
                 type="button"
