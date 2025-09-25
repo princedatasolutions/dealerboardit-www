@@ -271,6 +271,17 @@ body {
   filter: none;
 }
 
+/* Always-on pink neon frame for selected tiles (matches SIGN IN hover) */
+.fs-tile--pink {
+  border: 1px solid rgb(244 114 182);
+  box-shadow: 0 0 20px rgba(236, 72, 153, 0.8);
+}
+.fs-tile--pink:hover,
+.fs-tile--pink:focus-visible {
+  box-shadow: 0 0 6px rgb(248 209 247 / 0.55), 0 0 14px rgb(248 209 247 / 0.35),
+    0 0 28px rgb(248 209 247 / 0.25), 0 0 20px rgba(236, 72, 153, 0.8);
+}
+
 /* Label copy — smaller, cleaner */
 .fs-note {
   color: var(--ice-blue);
