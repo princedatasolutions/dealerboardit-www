@@ -33,7 +33,7 @@ export default function Home() {
         <aside className="right">
           <div className="fs-grid" role="group" aria-label="Pricing overview">
             {/* TL */}
-            <div className="fs-tile fs-tile--pink">
+            <div className="fs-tile">
               <span className="fs-accent fs-accent--white fs-amount">$0</span>
               <span className="fs-note">Start-up Fees</span>
             </div>
@@ -55,7 +55,7 @@ export default function Home() {
             </div>
 
             {/* BR */}
-            <div className="fs-tile fs-tile--pink">
+            <div className="fs-tile">
               <span className="fs-accent fs-amount">$3,690</span>
               <span className="fs-note">
                 Yearly
