@@ -44,71 +44,73 @@ export default function Home() {
 
         {/* Right: Four-Square */}
         <aside className="right">
-          <div className="fs-grid" role="group" aria-label="Pricing overview">
-            {/* TL */}
-            <button
-              type="button"
-              className="fs-tile"
-              onClick={() => openModal("monthly")}
-              aria-label="$0 start-up fees"
-            >
-              <span className="fs-accent fs-accent--white fs-amount">$0</span>
-              <span className="fs-note">Start-up Fees</span>
-            </button>
+          <div className="flex flex-col items-center">
+            <div className="fs-grid" role="group" aria-label="Pricing overview">
+              {/* TL */}
+              <button
+                type="button"
+                className="fs-tile"
+                onClick={() => openModal("monthly")}
+                aria-label="$0 start-up fees"
+              >
+                <span className="fs-accent fs-accent--white fs-amount">$0</span>
+                <span className="fs-note">Start-up Fees</span>
+              </button>
 
-            {/* TR */}
-            <button
-              type="button"
-              className="fs-tile"
-              onClick={() => openModal("monthly")}
-              aria-label="Monthly plan"
-            >
-              <span className="fs-accent fs-amount">$369</span>
-              <span className="fs-note">
-                Monthly
-                <br />
-                <small className="opacity-70">(Single Store)</small>
-              </span>
-            </button>
+              {/* TR */}
+              <button
+                type="button"
+                className="fs-tile"
+                onClick={() => openModal("monthly")}
+                aria-label="Monthly plan"
+              >
+                <span className="fs-accent fs-amount">$369</span>
+                <span className="fs-note">
+                  Monthly
+                  <br />
+                  <small className="opacity-70">(Single Store)</small>
+                </span>
+              </button>
 
-            {/* BL */}
-            <button
-              type="button"
-              className="fs-tile"
-              onClick={() => openModal("multi_store")}
-              aria-label="Monthly discount with multi-stores"
-            >
-              <span className="fs-accent fs-amount">$36.9</span>
-              <span className="fs-note">
-                Monthly Discount
-                <br />
-                with Multi-Stores
-              </span>
-            </button>
+              {/* BL */}
+              <button
+                type="button"
+                className="fs-tile"
+                onClick={() => openModal("multi_store")}
+                aria-label="Monthly discount with multi-stores"
+              >
+                <span className="fs-accent fs-amount">$36.9</span>
+                <span className="fs-note">
+                  Monthly Discount
+                  <br />
+                  with Multi-Stores
+                </span>
+              </button>
 
-            {/* BR */}
-            <button
-              type="button"
-              className="fs-tile"
-              onClick={() => openModal("yearly")}
-              aria-label="Yearly plan - 2 months free"
-            >
-              <span className="fs-accent fs-amount">$3,690</span>
-              <span className="fs-note">
-                Yearly
-                <br />2 Months FREE!
-                <br />
-                <small className="opacity-70">(Single Store)</small>
-              </span>
-            </button>
+              {/* BR */}
+              <button
+                type="button"
+                className="fs-tile"
+                onClick={() => openModal("yearly")}
+                aria-label="Yearly plan - 2 months free"
+              >
+                <span className="fs-accent fs-amount">$3,690</span>
+                <span className="fs-note">
+                  Yearly
+                  <br />2 Months FREE!
+                  <br />
+                  <small className="opacity-70">(Single Store)</small>
+                </span>
+              </button>
 
-            {/* grid crosshair lines (pure CSS) */}
-            <div className="fs-divider" aria-hidden="true" />
+              {/* grid crosshair lines (pure CSS) */}
+              <div className="fs-divider" aria-hidden="true" />
+            </div>
+
+            <p className="mt-6 text-center text-sm text-slate-400">
+              (Select Your Payment Plan)
+            </p>
           </div>
-
-          <p className="mt-6 text-center text-sm text-slate-400">
-            (Select Your Payment Plan)
-          </p>
         </aside>
       </main>
 
