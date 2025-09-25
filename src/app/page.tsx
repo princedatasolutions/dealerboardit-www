@@ -67,17 +67,39 @@ export default function Home() {
         <aside className="right">
           <section className="section" id="about">
             <h2 className="text-neon-pink">About Board It!</h2>
+
             <p>
-              The simple, real-time sales board for dealerships. Track deals in
-              a clean 23-column grid, open the “Board It!” modal to edit, and
-              see instant KPIs across Store → Complex → Region → Group.
+              <strong>Dealer Board It!</strong> is the modern sales board
+              software for dealerships. We replace dry erase boards and clunky
+              spreadsheets with a clean, cloud-based platform built for speed,
+              accuracy, and celebration.
             </p>
+
+            <p>Dealers use Board It! to:</p>
             <ul>
-              <li>Snapshot tiles for Units · FEG · BEG · Trades · Team</li>
-              <li>BVA log + RDR tracking (open/closed, age, audit-friendly)</li>
-              <li>VIN decoding (NHTSA) with future inventory API sync</li>
-              <li>Permission tiers + location filters by access tier</li>
+              <li>Track deals in real time with instant KPIs</li>
+              <li>Give managers and GMs clear dashboards at every level</li>
+              <li>
+                Eliminate outdated dealership sales logs and manual reports
+              </li>
+              <li>
+                Provide tiered access from Groups → Regions → Complexes → Stores
+              </li>
             </ul>
+
+            <p>
+              Beyond your sales board, Board It! also streamlines dealership
+              pain points with built-in <strong>BVA logging</strong> and{" "}
+              <strong>RDR tracking</strong>, giving managers clarity on vehicles
+              in circulation and deliveries reported.
+            </p>
+
+            <p>
+              <em>
+                Our mission is simple: help automotive retailers make smarter
+                decisions, move inventory faster, and celebrate every win.
+              </em>
+            </p>
           </section>
 
           <section className="section" id="seo">
@@ -98,7 +120,7 @@ export default function Home() {
             </ul>
           </section>
 
-          <section className="section" id="screenshots">
+          <section className="section wide" id="screenshots">
             <h2>Screenshots</h2>
             <div className="shots">
               <div className="shot">

@@ -382,3 +382,11 @@ body {
   color: var(--ice-blue);
   letter-spacing: 0.02em;
 }
+
+/* readable measure for text sections */
+.section {
+  max-width: 68ch;
+}
+.section.wide {
+  max-width: none;
+}
