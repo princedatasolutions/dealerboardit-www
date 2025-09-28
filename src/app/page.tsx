@@ -117,7 +117,7 @@ export default function Home() {
             </div>
 
             <p className="mt-6 text-center text-sm text-slate-400">
-              (Select Your Subcription)
+              (Choose Your Plan)
             </p>
           </div>
         </aside>
