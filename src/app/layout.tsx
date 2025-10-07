@@ -48,7 +48,8 @@ export const metadata = {
       "Real-time sales tracking, leaderboards, and forecasting — all in one dashboard.",
     images: [
       {
-        url: "/og-image.jpg", // replace with your actual OG image path if you have one
+        url: "/logonobackround.png",
+
         width: 1200,
         height: 630,
         alt: "Dealer Board It! — Digital Sales Board",
@@ -60,7 +61,7 @@ export const metadata = {
     title: "Dealer Board It! — Digital Sales Board",
     description:
       "Real-time sales tracking, leaderboards, and forecasting for dealership managers.",
-    images: ["/og-image.jpg"], // same image is fine
+    images: ["/logonobackround.png"], // same image is fine
   },
   alternates: {
     canonical: "https://dealerboardit.com",
