@@ -20,12 +20,12 @@ export default function SiteHeader() {
         </Link>
 
         <nav className="main-nav" aria-label="Primary">
-          <a href="/#product" className="nav-link">
+          <Link href="/#product" className="nav-link">
             Product
-          </a>
-          <a href="/#how" className="nav-link">
+          </Link>
+          <Link href="/#how" className="nav-link">
             How it works
-          </a>
+          </Link>
           <Link href="/pricing" className="nav-link">
             Pricing
           </Link>
