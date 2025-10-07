@@ -2,6 +2,8 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Script from "next/script";
+
 import SiteHeader from "@/components/SiteHeader";
 
 const inter = Inter({
@@ -36,6 +38,19 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+        {/* Google Analytics 4 */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-WJ5SEHZ9LD"
+          strategy="afterInteractive"
+        />
+        <Script id="ga4-init" strategy="afterInteractive">
+          {`
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-WJ5SEHZ9LD', { send_page_view: true });
+  `}
+        </Script>
         {/* Global sticky header on every route */}
         <SiteHeader />
         {children}
