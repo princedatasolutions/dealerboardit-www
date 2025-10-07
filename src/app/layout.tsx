@@ -30,6 +30,43 @@ export const metadata: Metadata = {
   icons: { icon: "/favicon.ico" },
 };
 
+export const metadata = {
+  metadataBase: new URL("https://dealerboardit.com"),
+  title: {
+    default:
+      "Dealer Board It! | Digital Sales Board Software for Car Dealership Managers",
+    template: "%s | Dealer Board It!",
+  },
+  description:
+    "Ditch the dry-erase board. Dealer Board It! gives dealership managers real-time sales tracking, leaderboards, and forecasting — all in one dashboard.",
+  openGraph: {
+    type: "website",
+    url: "https://dealerboardit.com",
+    siteName: "Dealer Board It!",
+    title: "Digital Sales Board Software for Car Dealership Managers",
+    description:
+      "Real-time sales tracking, leaderboards, and forecasting — all in one dashboard.",
+    images: [
+      {
+        url: "/og-image.jpg", // replace with your actual OG image path if you have one
+        width: 1200,
+        height: 630,
+        alt: "Dealer Board It! — Digital Sales Board",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Dealer Board It! — Digital Sales Board",
+    description:
+      "Real-time sales tracking, leaderboards, and forecasting for dealership managers.",
+    images: ["/og-image.jpg"], // same image is fine
+  },
+  alternates: {
+    canonical: "https://dealerboardit.com",
+  },
+};
+
 export default function RootLayout({
   children,
 }: {
