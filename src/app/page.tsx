@@ -1,9 +1,10 @@
 "use client";
 
-// src/app/page.tsx
+// src/app/page.tsx — homepage without its own header (global header comes from layout)
 import { useState } from "react";
-import Image from "next/image";
+import Link from "next/link";
 import LeadFormModal from "@/components/LeadFormModal";
+import ProductSection from "@/components/ProductSelection";
 
 type LeadPlan = "monthly" | "yearly" | "multi_store";
 
@@ -11,116 +12,65 @@ export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
   const [planSelected, setPlanSelected] = useState<LeadPlan>("monthly");
 
-  function openModal(plan: LeadPlan) {
-    setPlanSelected(plan);
-    setIsOpen(true);
-  }
-
   return (
     <>
-      {/* Top bar with SIGN IN */}
-      <header className="topbar">
-        <a
-          href="https://app.dealerboardit.com/auth/login"
-          className="rounded-full px-5 py-2.5 border border-white/30 hover:border-pink-400 hover:shadow-[0_0_20px_rgba(236,72,153,0.8)] transition"
-        >
-          SIGN IN
-        </a>
-      </header>
+      {/* Hero */}
+      <main>
+        <section className="hero" id="hero">
+          <div className="hero__copy">
+            <h1 className="hero__title">
+              Modern sales boards for dealerships—
+              <span className="hero__accent"> fast, neon-clean, fun.</span>
+            </h1>
+            <p className="hero__sub">
+              Log deals in seconds, <strong>Board It!</strong> with one click,
+              and see real-time snapshots across stores.
+            </p>
 
-      <main className="shell">
-        {/* Left: Logo */}
-        <section className="left">
-          <Image
-            src="/logonobackround.png"
-            alt="Dealerboardit"
-            width={1200}
-            height={1200}
-            sizes="(min-width: 1024px) 45vw, 90vw"
-            className="logo"
-            priority
-          />
+            <div className="hero__cta">
+              <button
+                className="btn btn-primary"
+                onClick={() => setIsOpen(true)}
+              >
+                Book a demo
+              </button>
+              <Link href="/pricing" className="btn btn-outline">
+                See pricing
+              </Link>
+            </div>
+          </div>
+
+          <div className="hero__media" aria-label="Product preview">
+            <video
+              className="hero__video"
+              playsInline
+              muted
+              autoPlay
+              loop
+              preload="metadata"
+              poster="/images/hero_poster.png"
+            >
+              <source src="/videos/hero.mp4" type="video/mp4" />
+            </video>
+          </div>
         </section>
 
-        {/* Right: Four-Square */}
-        <aside className="right flex justify-center">
-          {/* constrain + center on mobile, full on larger screens */}
-          <div className="flex w-full max-w-[520px] flex-col items-center px-4 sm:max-w-[620px] lg:max-w-none">
-            <div
-              className="fs-grid mx-auto"
-              role="group"
-              aria-label="Pricing overview"
-            >
-              {/* TL */}
-              <button
-                type="button"
-                className="fs-tile"
-                onClick={() => openModal("monthly")}
-                aria-label="$0 start-up fees"
-              >
-                <span className="fs-accent fs-accent--white fs-amount">$0</span>
-                <span className="fs-note">
-                  Start-up Fees
-                  <br />
-                  <small className="opacity-70">(With Any Plan)</small>
-                </span>
-              </button>
-
-              {/* TR */}
-              <button
-                type="button"
-                className="fs-tile"
-                onClick={() => openModal("monthly")}
-                aria-label="Monthly plan"
-              >
-                <span className="fs-accent fs-amount">$369</span>
-                <span className="fs-note">
-                  Monthly
-                  <br />
-                  <small className="opacity-70">(Single Store)</small>
-                </span>
-              </button>
-
-              {/* BL */}
-              <button
-                type="button"
-                className="fs-tile"
-                onClick={() => openModal("multi_store")}
-                aria-label="Monthly discount with multi-stores"
-              >
-                <span className="fs-accent fs-amount">$36.9</span>
-                <span className="fs-note">
-                  Monthly Discount
-                  <br />
-                  <small className="opacity-70">(Multi-store)</small>
-                </span>
-              </button>
-
-              {/* BR */}
-              <button
-                type="button"
-                className="fs-tile"
-                onClick={() => openModal("yearly")}
-                aria-label="Yearly plan - 2 months free"
-              >
-                <span className="fs-accent fs-amount">$3,690</span>
-                <span className="fs-note">
-                  Yearly
-                  <br />2 Months FREE!
-                  <br />
-                  <small className="opacity-70">(Single Store)</small>
-                </span>
-              </button>
-
-              {/* grid crosshair lines (pure CSS) */}
-              <div className="fs-divider" aria-hidden="true" />
-            </div>
-
-            <p className="mt-6 text-center text-sm text-slate-400">
-              (Choose Your Plan)
-            </p>
+        {/* Product + How placeholders (wire later) */}
+        <section id="product" className="section-pad">
+          <div className="section-max">
+            <h2 className="section-title">Product</h2>
+            <p className="section-sub">Click a tile to watch a quick demo.</p>
+            <ProductSection />
           </div>
-        </aside>
+        </section>
+
+        <section id="how" className="section-pad">
+          <div className="section-max">
+            <h2 className="section-title">Bonus Levels</h2>
+
+            <p className="section-sub">Coming Soon</p>
+          </div>
+        </section>
       </main>
 
       <footer className="footer">© 2025 Dealer Board It LLC</footer>

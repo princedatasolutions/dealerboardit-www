@@ -1,11 +1,13 @@
+// src/app/layout.tsx
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import SiteHeader from "@/components/SiteHeader";
 
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",
-  weight: ["300", "400"], // light + regular, no bold
+  weight: ["300", "400", "500", "600", "700"], // ensure headings/buttons can use heavier weights
 });
 
 export const metadata: Metadata = {
@@ -33,7 +35,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        {/* Global sticky header on every route */}
+        <SiteHeader />
+        {children}
+      </body>
     </html>
   );
 }

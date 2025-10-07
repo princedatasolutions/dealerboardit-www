@@ -60,6 +60,172 @@ body {
 }
 
 /* ---------- Header ---------- */
+/* New site header (homepage only) */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(6px);
+  background: color-mix(in srgb, #000 86%, transparent);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.site-header__inner {
+  height: var(--topbar-h);
+  max-width: var(--maxw);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 16px;
+  padding: 0 var(--pad);
+}
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+.brand__logo {
+  width: 32px;
+  height: 32px;
+}
+.brand__name {
+  font-size: 0.98rem;
+  letter-spacing: 0.02em;
+  color: var(--ice-blue);
+}
+
+.main-nav {
+  display: none;
+  gap: 18px;
+}
+@media (min-width: 900px) {
+  .main-nav {
+    display: inline-flex;
+  }
+}
+.nav-link {
+  color: #cdd7e3;
+  text-decoration: none;
+  font-size: 0.92rem;
+}
+.nav-link:hover {
+  color: #fff;
+  text-shadow: 0 0 10px rgb(from var(--neon-blue) r g b / 0.25);
+}
+
+.actions {
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.55rem 0.9rem;
+  border-radius: 9999px;
+  text-decoration: none;
+  font-size: 0.92rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #fff;
+  transition: transform 0.15s ease, box-shadow 0.2s ease, border-color 0.2s ease,
+    color 0.2s ease;
+}
+.btn:active {
+  transform: translateY(1px);
+}
+.btn-primary {
+  border-color: var(--neon-pink-core);
+  box-shadow: 0 0 10px rgb(from var(--neon-pink-bloom) r g b / 0.45);
+}
+.btn-primary:hover {
+  box-shadow: 0 0 6px rgb(from var(--neon-pink-bloom) r g b / 0.65),
+    0 0 18px rgb(from var(--neon-pink-bloom) r g b / 0.45);
+}
+.btn-ghost {
+  border-color: rgba(255, 255, 255, 0.22);
+  color: #cfe9ff;
+}
+.btn-ghost:hover {
+  border-color: var(--brand-green);
+  color: var(--brand-green);
+}
+.btn-outline {
+  background: transparent;
+}
+.btn-outline:hover {
+  border-color: var(--neon-blue);
+  color: #fff;
+}
+
+/* Hero */
+.hero {
+  --g: clamp(18px, 4vw, 42px);
+  max-width: var(--maxw);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--g);
+  padding: clamp(28px, 6vw, 68px) var(--pad);
+  align-items: center;
+}
+@media (min-width: 1024px) {
+  .hero {
+    grid-template-columns: 1.05fr 0.95fr;
+    padding: clamp(28px, 6vw, 68px) var(--pad-lg);
+  }
+}
+.hero__title {
+  font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+  line-height: 1.15;
+  margin: 0;
+}
+.hero__accent {
+  color: var(--neon-pink);
+  text-shadow: 0 0 14px rgb(from var(--neon-pink) r g b / 0.25);
+}
+.hero__sub {
+  margin-top: 10px;
+  color: #cfe9ff;
+  max-width: 46ch;
+}
+.hero__cta {
+  display: flex;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.hero__media {
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+}
+.hero__video {
+  width: 100%;
+  height: auto;
+  display: block;
+  background: #0b0f14;
+}
+
+/* Utility sections (placeholders) */
+.section-pad {
+  padding: 48px var(--pad);
+}
+.section-max {
+  max-width: var(--maxw);
+  margin: 0 auto;
+}
+.section-title {
+  font-size: 1.35rem;
+  margin: 0 0 6px;
+}
+.section-sub {
+  color: #cfe9ff;
+  opacity: 0.9;
+}
+
 .topbar {
   height: var(--topbar-h);
   display: flex;
@@ -332,4 +498,144 @@ body {
     0 0 24px var(--halo-white);
   filter: drop-shadow(0 0 8px var(--halo-white))
     drop-shadow(0 0 18px rgb(232 238 247 / 0.45));
+}
+
+/* ---------- Global Font Normalization (Inter everywhere) ---------- */
+:root {
+  --font-sans-stack: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+/* Use Inter site-wide (the Inter class from layout sets the font;
+   these rules ensure no component overrides it). */
+html,
+body {
+  font-family: var(--font-sans-stack) !important;
+}
+
+/* Inherit font for all elements so one-off components can’t override */
+*,
+*::before,
+*::after {
+  font-family: inherit !important;
+}
+
+/* Ensure headings/buttons don’t pull a different face */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button,
+input,
+select,
+textarea,
+a {
+  font-family: inherit !important;
+}
+
+/* ----- Product grid ----- */
+.product__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 22px;
+  margin-top: 18px;
+}
+@media (min-width: 900px) {
+  .product__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.product__tile {
+  background: #0c1015;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  padding: 12px;
+  text-align: left;
+  cursor: pointer;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease, transform 0.12s ease;
+}
+.product__tile:hover {
+  border-color: var(--neon-blue);
+  box-shadow: 0 0 12px rgb(from var(--neon-blue) r g b / 0.35);
+  transform: translateY(-2px);
+}
+.product__media {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.product__img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.product__play {
+  position: absolute;
+  right: 12px;
+  bottom: 10px;
+  font-size: 22px;
+  line-height: 1;
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
+  padding: 6px 10px;
+}
+
+/* Tile text */
+.product__copy {
+  margin-top: 10px;
+}
+.product__title {
+  font-size: 1.02rem;
+  margin: 0 0 2px;
+}
+.product__caption {
+  color: #cfe9ff;
+  opacity: 0.9;
+  margin: 0;
+}
+
+/* ----- Lightbox ----- */
+.lb__backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  background: rgba(2, 8, 16, 0.75);
+  backdrop-filter: blur(4px);
+  display: grid;
+  place-items: center;
+}
+.lb__panel {
+  position: relative;
+  width: min(96vw, 1080px);
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 0 22px rgb(from var(--neon-pink) r g b / 0.4);
+  overflow: hidden;
+  background: #05080c;
+}
+.lb__video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.lb__close {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  height: 36px;
+  width: 36px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(0, 0, 0, 0.35);
+  color: #fff;
+  font-size: 22px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+.lb__close:hover {
+  box-shadow: 0 0 12px rgb(from var(--neon-pink) r g b / 0.55);
 }
