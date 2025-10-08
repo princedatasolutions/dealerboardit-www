@@ -52,7 +52,9 @@ export default function Home() {
                 <span className="fs-note">
                   Book Demo
                   <br />
-                  <small className="opacity-70">(Just kickin' tires)</small>
+                  <small className="opacity-70">
+                    (Just kickin&rsquo; tires)
+                  </small>
                 </span>
               </button>
 
