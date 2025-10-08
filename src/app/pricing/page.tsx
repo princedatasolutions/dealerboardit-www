@@ -49,7 +49,11 @@ export default function Home() {
                 aria-label="Book Demo"
               >
                 <span className="fs-accent fs-accent--white fs-amount">$0</span>
-                <span className="fs-note">Book Demo</span>
+                <span className="fs-note">
+                  Book Demo
+                  <br />
+                  <small className="opacity-70">(Just kickin' tires)</small>
+                </span>
               </button>
 
               {/* TR */}
@@ -103,7 +107,7 @@ export default function Home() {
             </div>
 
             <p className="mt-6 text-center text-sm text-slate-400">
-              (Choose Your Plan)
+              (Choose Your Payment)
             </p>
           </div>
         </aside>
