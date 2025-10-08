@@ -6,7 +6,7 @@ import Link from "next/link";
 import LeadFormModal from "@/components/LeadFormModal";
 import ProductSection from "@/components/ProductSelection";
 
-type LeadPlan = "demo" | "monthly" | "yearly" | "multi_store";
+import type { LeadPlan } from "@/components/LeadFormModal";
 
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false);

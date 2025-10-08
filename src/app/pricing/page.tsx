@@ -5,7 +5,7 @@ import { useState } from "react";
 import Image from "next/image";
 import LeadFormModal from "@/components/LeadFormModal";
 
-type LeadPlan = "demo" | "monthly" | "yearly" | "multi_store";
+import type { LeadPlan } from "@/components/LeadFormModal";
 
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
@@ -56,8 +56,8 @@ export default function Home() {
               <button
                 type="button"
                 className="fs-tile"
-                onClick={() => openModal("monthly")}
-                aria-label="Monthly"
+                onClick={() => openModal("demo")}
+                aria-label="Book Demo"
               >
                 <span className="fs-accent fs-amount">$369</span>
                 <span className="fs-note">

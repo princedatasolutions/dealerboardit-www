@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 
-type LeadPlan = "monthly" | "yearly" | "multi_store";
+export type LeadPlan = "demo" | "monthly" | "yearly" | "multi_store";
 
 export default function LeadFormModal({
   open,
