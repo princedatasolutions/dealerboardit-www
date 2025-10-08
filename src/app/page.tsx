@@ -19,10 +19,10 @@ export default function Home() {
         <section className="hero" id="hero">
           <div className="hero__copy">
             <h1 className="hero__title">
-              The modern sales board for dealerships
+              The modern sales board for dealerships.
               <span className="hero__accent">
-                Real-time deals, leaderboards, and sales performance — built by
-                operators. Built for managers.
+                Real-time deals and sales performance — built by operators.
+                Built for managers.
               </span>
             </h1>
 
