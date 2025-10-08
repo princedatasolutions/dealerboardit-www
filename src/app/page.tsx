@@ -23,7 +23,7 @@ export default function Home() {
               <span className="hero__accent"> fast, neon-clean, fun.</span>
             </h1>
             <p className="hero__sub">
-              Log deals in seconds, <strong>Board It!</strong> with one click,
+              Board deals in seconds, <strong>Board It!</strong> with one click,
               and see real-time salesboards, dashboards, and leaderboards for
               your entire store.
             </p>
