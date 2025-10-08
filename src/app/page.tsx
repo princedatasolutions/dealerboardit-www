@@ -19,13 +19,17 @@ export default function Home() {
         <section className="hero" id="hero">
           <div className="hero__copy">
             <h1 className="hero__title">
-              Modern sales boards for dealerships—
-              <span className="hero__accent"> fast, neon-clean, fun.</span>
+              The modern sales board for dealerships
+              <span className="hero__accent">
+                Real-time deals, leaderboards, and sales performance — built by
+                operators. Built for managers.
+              </span>
             </h1>
+
             <p className="hero__sub">
-              Board deals in seconds, <strong>Board It!</strong> with one click,
-              and see real-time salesboards, dashboards, and leaderboards for
-              your entire store.
+              Board deals in seconds. <strong>Board It!</strong> with one click
+              and see real-time sales boards, KPI dashboards, and leaderboards
+              across all your stores.
             </p>
 
             <div className="hero__cta">
