@@ -24,7 +24,8 @@ export default function Home() {
             </h1>
             <p className="hero__sub">
               Log deals in seconds, <strong>Board It!</strong> with one click,
-              and see real-time snapshots across stores.
+              and see your real-time salesboard, dashboard, and leaderboard for
+              your entire store.
             </p>
 
             <div className="hero__cta">
@@ -58,7 +59,7 @@ export default function Home() {
         {/* Product + How placeholders (wire later) */}
         <section id="product" className="section-pad">
           <div className="section-max">
-            <h2 className="section-title">Product</h2>
+            <h2 className="section-title">Main Levels</h2>
             <p className="section-sub">Click a tile to watch a quick demo.</p>
             <ProductSection />
           </div>

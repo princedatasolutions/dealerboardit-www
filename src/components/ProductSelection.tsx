@@ -15,21 +15,21 @@ type Tile = {
 const TILES: Tile[] = [
   {
     key: "adddeal",
-    title: "Add a deal in seconds",
+    title: "Board your deal in seconds",
     caption: "One click to Board It!",
     poster: "/images/add_new_deal.png",
     video: "/videos/adddeal1.mp4",
   },
   {
     key: "filterbar",
-    title: "Filters that move the board",
+    title: "Filters that move your board",
     caption: "Today • Week • Month • My deals",
     poster: "/images/salesboard.png",
     video: "/videos/filterbar_short1.mp4",
   },
   {
     key: "snapshot",
-    title: "Snapshot & dashboards",
+    title: "Salesboard, Dashboard, Leaderboard",
     caption: "Units • FEG • BEG • Trades • Team",
     poster: "/images/dashboard.png",
     video: "/videos/sales_dash_leader_boards1.mp4",
