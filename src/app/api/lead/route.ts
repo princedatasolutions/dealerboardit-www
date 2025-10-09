@@ -105,9 +105,7 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({ ok: true });
   } catch (err: unknown) {
-    const msg =
-     const msg = err instanceof Error ? err.message : "Unexpected error";
-
+    const msg = err instanceof Error ? err.message : "Unexpected error";
     return NextResponse.json({ error: msg }, { status: 500 });
   }
 }
