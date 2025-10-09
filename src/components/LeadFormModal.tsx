@@ -41,6 +41,10 @@ export default function LeadFormModal({
         return "Yearly";
       case "multi_store":
         return "Multi-Store (Monthly discount)";
+      case "demo":
+        return "Book Demo";
+      default:
+        return "Book Demo";
     }
   }, [planSelected]);
 
@@ -61,7 +65,9 @@ export default function LeadFormModal({
           typeof storeCount === "number"
             ? storeCount
             : Number(storeCount) || null,
-        plan_selected: planSelected,
+        // Map UI "demo" → DB enum "book_demo"
+        plan_selected: planSelected === "demo" ? "book_demo" : planSelected,
+
         message: message.trim() || null,
         marketing_opt_in: !!optIn,
         page_path: window.location.pathname,
