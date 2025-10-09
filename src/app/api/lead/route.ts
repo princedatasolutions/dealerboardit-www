@@ -88,20 +88,26 @@ export async function POST(req: NextRequest) {
     });
 
     if (!resp.ok) {
-      let detail: any = null;
+      let detail: unknown = null;
+
       try {
         detail = await resp.json();
       } catch {}
-      return NextResponse.json(
-        { error: detail?.message || `Resend error: ${resp.status}` },
-        { status: 502 }
-      );
+      const msg =
+        detail &&
+        typeof detail === "object" &&
+        "message" in (detail as Record<string, unknown>)
+          ? (detail as { message?: string }).message ??
+            `Resend error: ${resp.status}`
+          : `Resend error: ${resp.status}`;
+      return NextResponse.json({ error: msg }, { status: 502 });
     }
 
     return NextResponse.json({ ok: true });
-  } catch (err: any) {
+  } catch (err: unknown) {
     const msg =
-      typeof err?.message === "string" ? err.message : "Unexpected error";
+     const msg = err instanceof Error ? err.message : "Unexpected error";
+
     return NextResponse.json({ error: msg }, { status: 500 });
   }
 }
