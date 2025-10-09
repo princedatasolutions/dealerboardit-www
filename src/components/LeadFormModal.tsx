@@ -116,7 +116,9 @@ export default function LeadFormModal({
         className="w-[92vw] max-w-[560px] rounded-2xl bg-neutral-900 border border-white/10 shadow-2xl p-6 space-y-4"
       >
         <div className="flex items-start justify-between">
-          <h2 className="text-xl font-semibold">Talk to Sales — {planLabel}</h2>
+          <h2 className="text-xl font-semibold">
+            Dealer Board It! — {planLabel}
+          </h2>
           <button
             type="button"
             onClick={onClose}

@@ -42,19 +42,18 @@ export default function Home() {
               aria-label="Pricing overview"
             >
               {/* TL */}
+              {/* TL */}
               <button
                 type="button"
                 className="fs-tile"
                 onClick={() => openModal("demo")}
                 aria-label="Book Demo"
               >
-                <span className="fs-accent fs-accent--white fs-amount">$0</span>
+                <span className="fs-accent fs-amount">$0</span>
                 <span className="fs-note">
                   Book Demo
                   <br />
-                  <small className="opacity-70">
-                    (Just kickin&rsquo; tires)
-                  </small>
+                  <small className="opacity-70">(Just Kicking Tires)</small>
                 </span>
               </button>
 
@@ -62,8 +61,8 @@ export default function Home() {
               <button
                 type="button"
                 className="fs-tile"
-                onClick={() => openModal("demo")}
-                aria-label="Book Demo"
+                onClick={() => openModal("monthly")}
+                aria-label="Monthly plan"
               >
                 <span className="fs-accent fs-amount">$369</span>
                 <span className="fs-note">

@@ -35,7 +35,10 @@ export default function Home() {
             <div className="hero__cta">
               <button
                 className="btn btn-primary"
-                onClick={() => setIsOpen(true)}
+                onClick={() => {
+                  setPlanSelected("demo");
+                  setIsOpen(true);
+                }}
               >
                 Book a demo
               </button>
