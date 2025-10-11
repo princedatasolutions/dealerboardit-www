@@ -12,6 +12,10 @@ export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
   const [planSelected, setPlanSelected] = useState<LeadPlan>("monthly");
 
+  // Bonus Levels lightbox
+  const [bonusOpen, setBonusOpen] = useState(false);
+  const [bonusSrc, setBonusSrc] = useState<string | null>(null);
+
   return (
     <>
       {/* Hero */}
@@ -75,10 +79,100 @@ export default function Home() {
         <section id="how" className="section-pad">
           <div className="section-max">
             <h2 className="section-title">Bonus Levels</h2>
+            <p className="section-sub">Extra demos beyond the main tiles.</p>
 
-            <p className="section-sub">Coming Soon</p>
+            <div className="product__grid">
+              {/* RDR Warning */}
+              <button
+                className="product__tile"
+                onClick={() => {
+                  setBonusSrc("/videos/rdrwarning1.mp4");
+                  setBonusOpen(true);
+                }}
+                aria-label="Play RDR Warning demo"
+              >
+                <div className="product__media">
+                  <video
+                    className="product__img"
+                    playsInline
+                    muted
+                    autoPlay
+                    loop
+                    preload="metadata"
+                  >
+                    <source src="/videos/rdrwarning1.mp4" type="video/mp4" />
+                  </video>
+                  <span className="product__play">▶</span>
+                </div>
+                <div className="product__copy">
+                  <h3 className="product__title">RDR Warning</h3>
+                  <p className="product__caption">How the RDR alert works.</p>
+                </div>
+              </button>
+
+              {/* BVA Log */}
+              <button
+                className="product__tile"
+                onClick={() => {
+                  setBonusSrc("/videos/bva1.mp4");
+                  setBonusOpen(true);
+                }}
+                aria-label="Play BVA demo"
+              >
+                <div className="product__media">
+                  <video
+                    className="product__img"
+                    playsInline
+                    muted
+                    autoPlay
+                    loop
+                    preload="metadata"
+                  >
+                    <source src="/videos/bva1.mp4" type="video/mp4" />
+                  </video>
+                  <span className="product__play">▶</span>
+                </div>
+                <div className="product__copy">
+                  <h3 className="product__title">BVA Log</h3>
+                  <p className="product__caption">
+                    Borrowed Vehicle Agreement tracking.
+                  </p>
+                </div>
+              </button>
+            </div>
           </div>
         </section>
+        {/* Bonus Levels Lightbox */}
+        {bonusOpen && bonusSrc && (
+          <div
+            className="lb__backdrop"
+            onClick={() => {
+              setBonusOpen(false);
+              setBonusSrc(null);
+            }}
+          >
+            <div
+              className="lb__panel"
+              onClick={(e) => e.stopPropagation()}
+              role="dialog"
+              aria-modal="true"
+            >
+              <button
+                className="lb__close"
+                aria-label="Close video"
+                onClick={() => {
+                  setBonusOpen(false);
+                  setBonusSrc(null);
+                }}
+              >
+                ×
+              </button>
+              <video className="lb__video" controls autoPlay playsInline>
+                <source src={bonusSrc} type="video/mp4" />
+              </video>
+            </div>
+          </div>
+        )}
       </main>
 
       <footer className="footer">© 2025 Dealer Board It LLC</footer>
