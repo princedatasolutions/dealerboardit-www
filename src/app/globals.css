@@ -2,6 +2,13 @@
 
 @import "tailwindcss";
 
+/* Utility: script/cursive heading */
+.script {
+  font-family: "Pacifico", "Brush Script MT", "Segoe Script", cursive !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.01em;
+}
+
 /* ---------- Minimal reset ---------- */
 *,
 *::before,

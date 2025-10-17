@@ -20,39 +20,42 @@ export default function Home() {
     <>
       {/* Hero */}
       <main>
-        <section className="hero" id="hero">
-          <div className="hero__copy">
+        <section
+          className="hero"
+          id="hero"
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: "4rem",
+            minHeight: "calc(100vh - 160px)", // header + footer breathing room
+          }}
+        >
+          <div
+            className="hero__copy"
+            style={{ textAlign: "center", maxWidth: 720 }}
+          >
             <h1 className="hero__title">
               The modern sales board for dealerships.
-              <span className="hero__accent">
-                Real-time deals and sales performance — built by operators.
-                Built for managers.
+              <br />
+              <br />
+              <span>
+                Real-time <span style={{ color: "#00cc66" }}>deals</span> and{" "}
+                <span style={{ color: "#00cc66" }}>sales</span> performance.
+                <br />
+                <br />
+                By dealers.
+                <br />
+                For dealers.
               </span>
             </h1>
-
-            <p className="hero__sub">
-              Board deals in seconds. <strong>Board It!</strong> with one click
-              and see real-time sales boards, KPI dashboards, and leaderboards
-              across all your stores.
-            </p>
-
-            <div className="hero__cta">
-              <button
-                className="btn btn-primary"
-                onClick={() => {
-                  setPlanSelected("demo");
-                  setIsOpen(true);
-                }}
-              >
-                Book a demo
-              </button>
-              <Link href="/pricing" className="btn btn-outline">
-                See pricing
-              </Link>
-            </div>
           </div>
 
-          <div className="hero__media" aria-label="Product preview">
+          <div
+            className="hero__media"
+            aria-label="Product preview"
+            style={{ display: "flex", justifyContent: "center" }}
+          >
             <video
               className="hero__video"
               playsInline
@@ -67,81 +70,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Product + How placeholders (wire later) */}
-        <section id="product" className="section-pad">
-          <div className="section-max">
-            <h2 className="section-title">Main Levels</h2>
-            <p className="section-sub">Click a tile to watch a quick demo.</p>
-            <ProductSection />
-          </div>
-        </section>
-
-        <section id="how" className="section-pad">
-          <div className="section-max">
-            <h2 className="section-title">Bonus Levels</h2>
-            <p className="section-sub">Extra demos beyond the main tiles.</p>
-
-            <div className="product__grid">
-              {/* RDR Warning */}
-              <button
-                className="product__tile"
-                onClick={() => {
-                  setBonusSrc("/videos/rdrwarning1.mp4");
-                  setBonusOpen(true);
-                }}
-                aria-label="Play RDR Warning demo"
-              >
-                <div className="product__media">
-                  <video
-                    className="product__img"
-                    playsInline
-                    muted
-                    autoPlay
-                    loop
-                    preload="metadata"
-                  >
-                    <source src="/videos/rdrwarning1.mp4" type="video/mp4" />
-                  </video>
-                  <span className="product__play">▶</span>
-                </div>
-                <div className="product__copy">
-                  <h3 className="product__title">RDR Warning</h3>
-                  <p className="product__caption">How the RDR alert works.</p>
-                </div>
-              </button>
-
-              {/* BVA Log */}
-              <button
-                className="product__tile"
-                onClick={() => {
-                  setBonusSrc("/videos/bva1.mp4");
-                  setBonusOpen(true);
-                }}
-                aria-label="Play BVA demo"
-              >
-                <div className="product__media">
-                  <video
-                    className="product__img"
-                    playsInline
-                    muted
-                    autoPlay
-                    loop
-                    preload="metadata"
-                  >
-                    <source src="/videos/bva1.mp4" type="video/mp4" />
-                  </video>
-                  <span className="product__play">▶</span>
-                </div>
-                <div className="product__copy">
-                  <h3 className="product__title">BVA Log</h3>
-                  <p className="product__caption">
-                    Borrowed Vehicle Agreement tracking.
-                  </p>
-                </div>
-              </button>
-            </div>
-          </div>
-        </section>
         {/* Bonus Levels Lightbox */}
         {bonusOpen && bonusSrc && (
           <div

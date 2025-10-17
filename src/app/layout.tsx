@@ -1,7 +1,13 @@
 // src/app/layout.tsx
 import "./globals.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Pacifico } from "next/font/google";
+const pacifico = Pacifico({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-pacifico",
+});
+
 import Script from "next/script";
 
 import SiteHeader from "@/components/SiteHeader";
@@ -57,7 +63,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${inter.className} ${pacifico.variable}`}>
         {/* Google Analytics 4 */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-WJ5SEHZ9LD"
