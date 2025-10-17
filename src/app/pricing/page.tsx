@@ -64,7 +64,7 @@ export default function Home() {
                 onClick={() => openModal("monthly")}
                 aria-label="Monthly plan"
               >
-                <span className="fs-accent fs-amount">$369</span>
+                <span className="fs-accent fs-amount">$200</span>
                 <span className="fs-note">
                   Monthly
                   <br />
@@ -79,7 +79,7 @@ export default function Home() {
                 onClick={() => openModal("multi_store")}
                 aria-label="Monthly discount with multi-stores"
               >
-                <span className="fs-accent fs-amount">$36.9</span>
+                <span className="fs-accent fs-amount">$50</span>
                 <span className="fs-note">
                   Monthly Discount
                   <br />
@@ -94,10 +94,11 @@ export default function Home() {
                 onClick={() => openModal("yearly")}
                 aria-label="Yearly plan - 2 months free"
               >
-                <span className="fs-accent fs-amount">$3,690</span>
+                <span className="fs-accent fs-amount">$1,200</span>
                 <span className="fs-note">
                   Yearly
-                  <br />2 Months FREE!
+                  <br />
+                  50% Off!
                   <br />
                   <small className="opacity-70">(Single Store)</small>
                 </span>
@@ -108,7 +109,7 @@ export default function Home() {
             </div>
 
             <p className="mt-6 text-center text-sm text-slate-400">
-              (Choose Your Payment)
+              (Unlock your Board)
             </p>
           </div>
         </aside>
