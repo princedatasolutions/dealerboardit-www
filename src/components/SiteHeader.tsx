@@ -62,7 +62,7 @@ export default function SiteHeader() {
           }}
         >
           <Link href="/appfax" className="nav-link">
-            AppFax
+            Appfax
           </Link>
 
           <Link href="/360_walk_around" className="nav-link">
@@ -70,7 +70,7 @@ export default function SiteHeader() {
           </Link>
 
           <Link href="/pricing" className="nav-link">
-            Pricing
+            4-Square Flexpay
           </Link>
         </nav>
 

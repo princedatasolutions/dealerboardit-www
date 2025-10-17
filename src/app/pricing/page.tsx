@@ -66,9 +66,9 @@ export default function Home() {
               >
                 <span className="fs-accent fs-amount">$200</span>
                 <span className="fs-note">
-                  Monthly Billing
+                  Per Month
                   <br />
-                  <small className="opacity-70">(Single Store)</small>
+                  <small className="opacity-70">(Billed Monthly)</small>
                 </span>
               </button>
 
@@ -79,11 +79,13 @@ export default function Home() {
                 onClick={() => openModal("multi_store")}
                 aria-label="Monthly discount with multi-stores"
               >
-                <span className="fs-accent fs-amount">$50</span>
+                <span className="fs-accent fs-amount">$150</span>
                 <span className="fs-note">
-                  Monthly Discount
+                  Per Month
                   <br />
-                  <small className="opacity-70">(Multi-store)</small>
+                  25% Off!
+                  <br />
+                  <small className="opacity-70">(Billed Quarterly)</small>
                 </span>
               </button>
 
@@ -94,13 +96,13 @@ export default function Home() {
                 onClick={() => openModal("yearly")}
                 aria-label="Yearly plan - 2 months free"
               >
-                <span className="fs-accent fs-amount">$1,200</span>
+                <span className="fs-accent fs-amount">$100</span>
                 <span className="fs-note">
-                  Yearly Billing
+                  Per Month
                   <br />
                   50% Off!
                   <br />
-                  <small className="opacity-70">(Single Store)</small>
+                  <small className="opacity-70">(Billed Anually)</small>
                 </span>
               </button>
 
@@ -109,7 +111,7 @@ export default function Home() {
             </div>
 
             <p className="mt-6 text-center text-sm text-slate-400">
-              (Unlock your Board)
+              (Choose your payment. Unlock your Board)
             </p>
           </div>
         </aside>

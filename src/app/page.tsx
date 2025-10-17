@@ -44,9 +44,9 @@ export default function Home() {
                 <span style={{ color: "#00cc66" }}>sales</span> performance.
                 <br />
                 <br />
-                By dealers.
-                <br />
                 For dealers.
+                <br />
+                By dealers.
               </span>
             </h1>
           </div>

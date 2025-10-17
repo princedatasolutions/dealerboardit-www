@@ -40,7 +40,8 @@ export default function LeadFormModal({
       case "yearly":
         return "Yearly";
       case "multi_store":
-        return "Multi-Store (Monthly discount)";
+        return "Quarterly";
+
       case "demo":
         return "Book Demo";
       default:
