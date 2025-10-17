@@ -66,7 +66,7 @@ export default function Home() {
               >
                 <span className="fs-accent fs-amount">$200</span>
                 <span className="fs-note">
-                  Monthly
+                  Monthly Billing
                   <br />
                   <small className="opacity-70">(Single Store)</small>
                 </span>
@@ -96,7 +96,7 @@ export default function Home() {
               >
                 <span className="fs-accent fs-amount">$1,200</span>
                 <span className="fs-note">
-                  Yearly
+                  Yearly Billing
                   <br />
                   50% Off!
                   <br />
