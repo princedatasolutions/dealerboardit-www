@@ -36,8 +36,8 @@ export default function WalkAround() {
       {/* Main Levels */}
       <section id="product" className="section-pad">
         <div className="section-max">
-          <h2 className="section-title">Main Levels</h2>
-          <p className="section-sub">Click a tile to watch a quick demo.</p>
+          <h2 className="section-title">Main Boards - Dominate</h2>
+          <p className="section-sub">No clickbait.</p>
           <ProductSection />
         </div>
       </section>
@@ -45,8 +45,8 @@ export default function WalkAround() {
       {/* Bonus Levels */}
       <section id="bonus" className="section-pad">
         <div className="section-max">
-          <h2 className="section-title">Bonus Levels</h2>
-          <p className="section-sub">Extra demos beyond the main tiles.</p>
+          <h2 className="section-title">Bonus Boards- Level Up</h2>
+          <p className="section-sub">No leadgate.</p>
 
           <div className="product__grid">
             {/* RDR Warning */}
