@@ -42,7 +42,6 @@ export default function Home() {
               aria-label="Pricing overview"
             >
               {/* TL */}
-              {/* TL */}
               <button
                 type="button"
                 className="fs-tile"
@@ -51,7 +50,7 @@ export default function Home() {
               >
                 <span className="fs-accent fs-amount">$0</span>
                 <span className="fs-note">
-                  Book Demo
+                  30 Day Test Drive
                   <br />
                   <small className="opacity-70">(Just Kicking Tires)</small>
                 </span>
@@ -111,7 +110,7 @@ export default function Home() {
             </div>
 
             <p className="mt-6 text-center text-sm text-slate-400">
-              (Choose your payment. Unlock your Board)
+              (Choose your payment and unlock your Board)
             </p>
           </div>
         </aside>
