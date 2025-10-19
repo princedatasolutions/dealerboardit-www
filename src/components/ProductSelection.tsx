@@ -16,14 +16,14 @@ const TILES: Tile[] = [
   {
     key: "adddeal",
     title: "Board your deal in seconds",
-    caption: "One click to Board It!",
+    caption: "Click it to Board It!",
     poster: "/images/add_new_deal.png",
     video: "/videos/adddeal1.mp4",
   },
   {
     key: "filterbar",
     title: "Filters that move your board",
-    caption: "Today • Week • Month • My deals",
+    caption: "Month • Week • Today • Custom",
     poster: "/images/salesboard.png",
     video: "/videos/filterbar_short1.mp4",
   },
@@ -33,6 +33,13 @@ const TILES: Tile[] = [
     caption: "Units • FEG • BEG • Trades • Team",
     poster: "/images/dashboard.png",
     video: "/videos/sales_dash_leader_boards1.mp4",
+  },
+  {
+    key: "dateboard",
+    title: "Dateboard",
+    caption: "Feel the beat, see the heat",
+    poster: "/images/salesboard.png", // placeholder poster; swap if you have a dateboard image
+    video: "/videos/dateboard1.mp4",
   },
 ];
 
