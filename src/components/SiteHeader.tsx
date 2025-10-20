@@ -108,7 +108,7 @@ export default function SiteHeader() {
 
         {/* Mobile Fullscreen Menu */}
         {menuOpen && (
-          <div className="fixed inset-0 z-50 bg-black/90 flex flex-col">
+          <div className="fixed inset-0 z-50 bg-black flex flex-col">
             {/* Top bar with safe-area padding and close button */}
             <div
               className="flex justify-end px-4"
@@ -134,40 +134,42 @@ export default function SiteHeader() {
             </div>
 
             {/* Centered menu */}
-            <div className="flex-1 flex items-center justify-center">
-              <nav className="flex flex-col items-center text-2xl w-full max-w-sm px-6">
-                <Link
-                  href="/appfax"
-                  onClick={() => setMenuOpen(false)}
-                  className="w-full text-center py-3"
-                >
-                  Appfax
-                </Link>
-                <hr className="w-full opacity-20" />
-                <Link
-                  href="/360_walk_around"
-                  onClick={() => setMenuOpen(false)}
-                  className="w-full text-center py-3"
-                >
-                  360 Walk-Around
-                </Link>
-                <hr className="w-full opacity-20" />
-                <Link
-                  href="/pricing"
-                  onClick={() => setMenuOpen(false)}
-                  className="w-full text-center py-3"
-                >
-                  4-Square Flexpay
-                </Link>
-                <hr className="w-full opacity-20" />
-                <Link
-                  href="https://app.dealerboardit.com/auth/login"
-                  onClick={() => setMenuOpen(false)}
-                  className="w-full text-center py-3"
-                >
-                  Board It! (Sign in)
-                </Link>
-              </nav>
+            <div className="flex-1 flex items-center justify-center px-6">
+              <div className="menu-panel w-full max-w-sm">
+                <nav className="flex flex-col items-center text-2xl w-full">
+                  <Link
+                    href="/appfax"
+                    onClick={() => setMenuOpen(false)}
+                    className="w-full text-center py-3"
+                  >
+                    Appfax
+                  </Link>
+                  <hr className="w-full opacity-20" />
+                  <Link
+                    href="/360_walk_around"
+                    onClick={() => setMenuOpen(false)}
+                    className="w-full text-center py-3"
+                  >
+                    360 Walk-Around
+                  </Link>
+                  <hr className="w-full opacity-20" />
+                  <Link
+                    href="/pricing"
+                    onClick={() => setMenuOpen(false)}
+                    className="w-full text-center py-3"
+                  >
+                    4-Square Flexpay
+                  </Link>
+                  <hr className="w-full opacity-20" />
+                  <Link
+                    href="https://app.dealerboardit.com/auth/login"
+                    onClick={() => setMenuOpen(false)}
+                    className="w-full text-center py-3"
+                  >
+                    Board It! (Sign in)
+                  </Link>
+                </nav>
+              </div>
             </div>
           </div>
         )}
@@ -205,6 +207,16 @@ export default function SiteHeader() {
           .mobile-trigger {
             display: block;
           }
+        }
+      `}</style>
+      <style jsx>{`
+        .menu-panel {
+          background: #0b0b0b;
+          border: 1px solid rgba(255, 255, 255, 0.14);
+          border-radius: 12px;
+          padding: 12px 0;
+          box-shadow: 0 0 22px rgba(0, 255, 153, 0.25),
+            /* soft neon glow */ 0 0 1px rgba(255, 255, 255, 0.5) inset; /* subtle inner line */
         }
       `}</style>
     </header>
