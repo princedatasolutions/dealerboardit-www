@@ -108,12 +108,16 @@ export default function SiteHeader() {
 
         {/* Mobile Fullscreen Menu */}
         {menuOpen && (
-          <div className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center">
-            <div className="absolute top-4 right-4">
+          <div className="fixed inset-0 z-50 bg-black/90 flex flex-col">
+            {/* Top bar with safe-area padding and close button */}
+            <div
+              className="flex justify-end px-4"
+              style={{ paddingTop: "env(safe-area-inset-top)", height: "56px" }}
+            >
               <button
                 aria-label="Close menu"
                 onClick={() => setMenuOpen(false)}
-                className="p-2 rounded-full border border-white/20 hover:bg-white/10 transition"
+                className="self-center p-2 rounded-full border border-white/20 hover:bg-white/10 transition"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -128,38 +132,42 @@ export default function SiteHeader() {
                 </svg>
               </button>
             </div>
-            <div className="flex flex-col items-center text-2xl w-full max-w-sm px-6">
-              <Link
-                href="/appfax"
-                onClick={() => setMenuOpen(false)}
-                className="w-full text-center py-3"
-              >
-                Appfax
-              </Link>
-              <hr className="w-full opacity-20" />
-              <Link
-                href="/360_walk_around"
-                onClick={() => setMenuOpen(false)}
-                className="w-full text-center py-3"
-              >
-                360 Walk-Around
-              </Link>
-              <hr className="w-full opacity-20" />
-              <Link
-                href="/pricing"
-                onClick={() => setMenuOpen(false)}
-                className="w-full text-center py-3"
-              >
-                4-Square Flexpay
-              </Link>
-              <hr className="w-full opacity-20" />
-              <Link
-                href="https://app.dealerboardit.com/auth/login"
-                onClick={() => setMenuOpen(false)}
-                className="w-full text-center py-3"
-              >
-                Board It! (Sign in)
-              </Link>
+
+            {/* Centered menu */}
+            <div className="flex-1 flex items-center justify-center">
+              <nav className="flex flex-col items-center text-2xl w-full max-w-sm px-6">
+                <Link
+                  href="/appfax"
+                  onClick={() => setMenuOpen(false)}
+                  className="w-full text-center py-3"
+                >
+                  Appfax
+                </Link>
+                <hr className="w-full opacity-20" />
+                <Link
+                  href="/360_walk_around"
+                  onClick={() => setMenuOpen(false)}
+                  className="w-full text-center py-3"
+                >
+                  360 Walk-Around
+                </Link>
+                <hr className="w-full opacity-20" />
+                <Link
+                  href="/pricing"
+                  onClick={() => setMenuOpen(false)}
+                  className="w-full text-center py-3"
+                >
+                  4-Square Flexpay
+                </Link>
+                <hr className="w-full opacity-20" />
+                <Link
+                  href="https://app.dealerboardit.com/auth/login"
+                  onClick={() => setMenuOpen(false)}
+                  className="w-full text-center py-3"
+                >
+                  Board It! (Sign in)
+                </Link>
+              </nav>
             </div>
           </div>
         )}
