@@ -77,7 +77,15 @@ export default function SiteHeader() {
         </nav>
 
         {/* Mobile Menu Icon (right side) */}
-        <div className="md:hidden absolute right-4 top-1/2 -translate-y-1/2">
+        <div
+          className="mobile-trigger"
+          style={{
+            position: "absolute",
+            right: "16px",
+            top: "50%",
+            transform: "translateY(-50%)",
+          }}
+        >
           <button
             aria-label="Open menu"
             onClick={() => setMenuOpen(true)}
@@ -157,6 +165,24 @@ export default function SiteHeader() {
           </a>
         </div>
       </div>
+      <style jsx>{`
+        /* Default: show desktop bits, hide mobile trigger */
+        .mobile-trigger {
+          display: none;
+        }
+        /* Mobile rules */
+        @media (max-width: 768px) {
+          .main-nav {
+            display: none !important;
+          }
+          .actions {
+            display: none !important;
+          }
+          .mobile-trigger {
+            display: block;
+          }
+        }
+      `}</style>
     </header>
   );
 }
