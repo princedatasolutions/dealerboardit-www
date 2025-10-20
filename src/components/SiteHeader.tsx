@@ -128,19 +128,35 @@ export default function SiteHeader() {
                 </svg>
               </button>
             </div>
-            <div className="flex flex-col items-center gap-8 text-2xl">
-              <Link href="/appfax" onClick={() => setMenuOpen(false)}>
+            <div className="flex flex-col items-center text-2xl w-full max-w-sm px-6">
+              <Link
+                href="/appfax"
+                onClick={() => setMenuOpen(false)}
+                className="w-full text-center py-3"
+              >
                 Appfax
               </Link>
-              <Link href="/360_walk_around" onClick={() => setMenuOpen(false)}>
+              <hr className="w-full opacity-20" />
+              <Link
+                href="/360_walk_around"
+                onClick={() => setMenuOpen(false)}
+                className="w-full text-center py-3"
+              >
                 360 Walk-Around
               </Link>
-              <Link href="/pricing" onClick={() => setMenuOpen(false)}>
+              <hr className="w-full opacity-20" />
+              <Link
+                href="/pricing"
+                onClick={() => setMenuOpen(false)}
+                className="w-full text-center py-3"
+              >
                 4-Square Flexpay
               </Link>
+              <hr className="w-full opacity-20" />
               <Link
                 href="https://app.dealerboardit.com/auth/login"
                 onClick={() => setMenuOpen(false)}
+                className="w-full text-center py-3"
               >
                 Board It! (Sign in)
               </Link>
