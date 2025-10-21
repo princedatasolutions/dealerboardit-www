@@ -1,6 +1,55 @@
 "use client";
 
 export default function AppFaxPage() {
+  const printAppFacts = () => {
+    const content = document.getElementById("appfacts-report");
+    if (!content) {
+      window.print();
+      return;
+    }
+
+    const w = window.open("", "_blank", "width=1024,height=768");
+    if (!w) {
+      window.print();
+      return;
+    }
+
+    const html = `
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>AppFacts Report</title>
+  <style>
+    @page { size: auto; margin: 12mm; }
+    html, body { height: auto !important; }
+    body { background: #fff; color: #000; -webkit-print-color-adjust: exact; print-color-adjust: exact; margin: 0; }
+
+    * { box-sizing: border-box; }
+    /* Let grids and cards break across pages */
+    div { page-break-inside: auto; break-inside: auto; }
+    .no-print { display: none !important; }
+  </style>
+</head>
+<body>
+<body>
+  <div style="width:min(1000px,92vw); margin:0 auto;">
+    ${content.outerHTML}
+  </div>
+</body>
+
+</html>`;
+
+    w.document.open();
+    w.document.write(html);
+    w.document.close();
+    w.focus();
+    setTimeout(() => {
+      w.print();
+      w.close();
+    }, 300);
+  };
+
   return (
     <main>
       {/* (Hero removed by request) */}
@@ -16,22 +65,34 @@ export default function AppFaxPage() {
       >
         {/* Print CSS — hide hero + button in print, make report full width */}
         <style>{`
-          @media print {
-            body {
-              -webkit-print-color-adjust: exact !important;
-              print-color-adjust: exact !important;
-              background: white !important;
-            }
-                        .no-print {
-              display: none !important;
-            }
+  @media print {
+    /* Preserve colors */
+    body { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
 
-            #appfacts-report {
-              width: 100% !important;
-              margin: 0 !important;
-            }
-          }
-        `}</style>
+    /* Hide site chrome */
+    header, nav, footer, .no-print { display: none !important; }
+
+    /* Prefer printing only the report without breaking pagination */
+    body * { visibility: hidden !important; }
+    #appfacts-report, #appfacts-report * { visibility: visible !important; }
+
+    /* Let the report flow naturally across pages */
+    #appfacts-report {
+      position: static !important;
+      width: 100% !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+    /* Avoid clipping */
+    #appfacts-report * { overflow: visible !important; }
+
+    /* Allow page breaks inside blocks (so we don't force everything onto one page) */
+    #appfacts-report div { break-inside: auto !important; page-break-inside: auto !important; }
+  }
+
+  @page { size: auto; margin: 12mm; }
+`}</style>
 
         {/* Export to PDF */}
         <div
@@ -43,7 +104,7 @@ export default function AppFaxPage() {
           }}
         >
           <button
-            onClick={() => window.print()}
+            onClick={printAppFacts}
             style={{
               background: "rgba(0,255,170,0.12)",
               border: "1px solid rgba(0,255,170,0.45)",

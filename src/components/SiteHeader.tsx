@@ -74,7 +74,7 @@ export default function SiteHeader() {
           <Link href="/pricing" className="nav-link">
             4-Square
           </Link>
-          <Link href="/appfax" className="nav-link">
+          <Link href="/appfax" className="nav-link" aria-label="AppFacts">
             AppFacts
           </Link>
         </nav>
