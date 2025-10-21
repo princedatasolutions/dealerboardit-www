@@ -169,7 +169,7 @@ export default function SiteHeader() {
                     onClick={() => setMenuOpen(false)}
                     className="w-full text-center py-3"
                   >
-                    Appfax
+                    AppFacts
                   </Link>
                   <hr className="w-full opacity-20" />
 
