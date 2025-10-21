@@ -65,14 +65,17 @@ export default function SiteHeader() {
             whiteSpace: "nowrap",
           }}
         >
-          <Link href="/appfax" className="nav-link">
-            Appfax
-          </Link>
           <Link href="/360_walk_around" className="nav-link">
             360 Walk-Around
           </Link>
+          <Link href="/features_benefits" className="nav-link">
+            Features & Benefits
+          </Link>
           <Link href="/pricing" className="nav-link">
-            4-Square Flexpay
+            4-Square
+          </Link>
+          <Link href="/appfax" className="nav-link">
+            Appfax
           </Link>
         </nav>
 
@@ -138,19 +141,19 @@ export default function SiteHeader() {
               <div className="menu-panel w-full max-w-sm">
                 <nav className="flex flex-col items-center text-2xl w-full">
                   <Link
-                    href="/appfax"
-                    onClick={() => setMenuOpen(false)}
-                    className="w-full text-center py-3"
-                  >
-                    Appfax
-                  </Link>
-                  <hr className="w-full opacity-20" />
-                  <Link
                     href="/360_walk_around"
                     onClick={() => setMenuOpen(false)}
                     className="w-full text-center py-3"
                   >
                     360 Walk-Around
+                  </Link>
+                  <hr className="w-full opacity-20" />
+                  <Link
+                    href="/features_benefits"
+                    onClick={() => setMenuOpen(false)}
+                    className="w-full text-center py-3"
+                  >
+                    Features & Benefits
                   </Link>
                   <hr className="w-full opacity-20" />
                   <Link
@@ -161,6 +164,15 @@ export default function SiteHeader() {
                     4-Square Flexpay
                   </Link>
                   <hr className="w-full opacity-20" />
+                  <Link
+                    href="/appfax"
+                    onClick={() => setMenuOpen(false)}
+                    className="w-full text-center py-3"
+                  >
+                    Appfax
+                  </Link>
+                  <hr className="w-full opacity-20" />
+
                   <Link
                     href="https://app.dealerboardit.com/auth/login"
                     onClick={() => setMenuOpen(false)}
