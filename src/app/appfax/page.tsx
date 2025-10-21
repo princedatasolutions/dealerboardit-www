@@ -82,11 +82,11 @@ export default function AppFaxPage() {
                 lineHeight: 1.2,
               }}
             >
-              Dealer Board It! — VIN: 0001-BOARDIT-TX
+              Dealer Board It! — VIN: 0001-DEALERBOARDIT!-TX
             </h2>
             <div style={{ opacity: 0.8, fontSize: "0.95rem" }}>
-              This report provided free of charge by: Board It! LLC — Austin,
-              Texas
+              This report provided free of charge by: Dealer Board It! LLC —
+              Austin, Texas
             </div>
           </div>
 
