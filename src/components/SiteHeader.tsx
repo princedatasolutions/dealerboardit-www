@@ -75,7 +75,7 @@ export default function SiteHeader() {
             4-Square
           </Link>
           <Link href="/appfax" className="nav-link">
-            Appfax
+            AppFacts
           </Link>
         </nav>
 
