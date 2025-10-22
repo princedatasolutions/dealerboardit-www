@@ -110,10 +110,24 @@ export default function Page() {
         </p>
       </section>
 
+      <section style={{ marginBottom: 36 }}>
+        <h2 style={{ fontSize: "22px", marginBottom: 8 }}>
+          Eliminate the Pivot Table Headache
+        </h2>
+        <p>
+          <strong>Problem:</strong> Too many pivot tables, VLOOKUPs, and broken
+          formulas. <br />
+          <strong>Feature:</strong> Cloud-based database with expert-level data
+          points already dialed in. <br />
+          <strong>Benefit:</strong> One click replaces five formulas in five
+          different sheets.
+        </p>
+      </section>
+
       <hr style={{ opacity: 0.2, margin: "28px 0" }} />
       <p style={{ opacity: 0.8 }}>
-        Dealer Board It! replaces dry-erase boards and scattered sheets with a
-        living sales system your team actually uses.
+        Dealer Board It! replaces incomplete sales boards, pivot tables, and
+        VLOOKUPs with a living sales system your team actually uses.
       </p>
     </main>
   );
