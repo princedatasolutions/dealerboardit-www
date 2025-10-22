@@ -20,23 +20,35 @@ export default function AppFaxPage() {
 <head>
   <meta charset="utf-8" />
   <title>AppFacts Report</title>
-  <style>
+    <style>
     @page { size: auto; margin: 12mm; }
     html, body { height: auto !important; }
     body { background: #fff; color: #000; -webkit-print-color-adjust: exact; print-color-adjust: exact; margin: 0; }
-
     * { box-sizing: border-box; }
-    /* Let grids and cards break across pages */
+
+    /* Keep sections printable and allow normal pagination */
     div { page-break-inside: auto; break-inside: auto; }
     .no-print { display: none !important; }
+
+    /* Force a page break BEFORE the Struggles/Milestones block */
+    .print-break { break-before: page; page-break-before: always; }
+
+    /* Stack the two-column grid on print to avoid clipping */
+    @media print {
+      .two-col { display: grid !important; grid-template-columns: 1fr !important; gap: 10px !important; }
+    }
+
+    /* Avoid card splits across pages (timeline rows & summary cards) */
+    .card { break-inside: avoid; page-break-inside: avoid; }
   </style>
+
 </head>
-<body>
 <body>
   <div style="width:min(1000px,92vw); margin:0 auto;">
     ${content.outerHTML}
   </div>
 </body>
+
 
 </html>`;
 
@@ -200,12 +212,12 @@ export default function AppFaxPage() {
             <p style={{ opacity: 0.9, lineHeight: 1.6, margin: 0 }}>
               {/* TODO: Replace with your voice */}
               Dealer Board It! was founded from the depths of spreadsheets,
-              pivot tables, and a genuine need to celebrate others. The
-              board-system was born out of a multi-rooftop dealer group’s
-              obsession with live and historical data — every day, every store,
-              every deal. After two and a half years of refining a shared,
-              robust spreadsheet, the need for scale was evident. Dealer Board
-              It! was built.
+              pivot tables, and a genuine need to celebrate the sucess of
+              others. The board-system was born out of a multi-rooftop dealer
+              group’s obsession with live and historical data — every day, every
+              store, every deal. After two and a half years of refining a shared
+              and robust spreadsheet, the need for scale was evident. Dealer
+              Board It! was built.
             </p>
           </div>
 
@@ -256,6 +268,7 @@ export default function AppFaxPage() {
               ].map((row, i) => (
                 <div
                   key={i}
+                  className="card"
                   style={{
                     display: "grid",
                     gridTemplateColumns: "120px 100px 1fr",
@@ -278,8 +291,11 @@ export default function AppFaxPage() {
             </div>
           </div>
 
+          <div className="print-break" />
+
           {/* Struggles & Milestones */}
           <div
+            className="two-col"
             style={{
               marginTop: 28,
               display: "grid",
