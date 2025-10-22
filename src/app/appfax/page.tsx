@@ -155,7 +155,7 @@ export default function AppFaxPage() {
                 lineHeight: 1.2,
               }}
             >
-              Dealer Board It! — VIN: 0001-DEALERBOARDIT!-TX
+              AIN: 0001-DEALERBOARDIT!
             </h2>
             <div style={{ opacity: 0.8, fontSize: "0.95rem" }}>
               This report provided free of charge by: Dealer Board It! LLC —
@@ -244,7 +244,7 @@ export default function AppFaxPage() {
                 {
                   date: "Nov 2023",
                   miles: "5,000 hrs",
-                  src: "Multi-Store Grand Opening",
+                  src: "Multi-Franchise Grand Opening",
                   note: "The genisis of the foundational spreadsheet for Dealer Board It!.",
                 },
                 {
@@ -263,7 +263,7 @@ export default function AppFaxPage() {
                   date: "Sep 2025",
                   miles: "50,000 hrs",
                   src: "World Wide Web",
-                  note: "Board It! LLC formed. App goes live.",
+                  note: "Dealer Board It! LLC formed. App goes live.",
                 },
               ].map((row, i) => (
                 <div
