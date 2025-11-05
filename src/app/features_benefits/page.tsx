@@ -112,15 +112,16 @@ export default function Page() {
 
       <section style={{ marginBottom: 36 }}>
         <h2 style={{ fontSize: "22px", marginBottom: 8 }}>
-          From the Trade Line to the Front Line
+          From Appraisal Line to the Front Line
         </h2>
         <p>
-          <strong>Problem:</strong> Recon time and accountability get lost
-          between departments. <br />
-          <strong>Feature:</strong> RECONboard tracks every unit’s progress,
-          cost, and days in recon in real time. <br />
-          <strong>Benefit:</strong> Tighter turns, faster front-line readiness,
-          and full visibility on every unit.
+          <strong>Problem:</strong> Recon guesses at appraisal turn into delays,
+          overages, and missed trades. <br />
+          <strong>Feature:</strong> RECONboard starts at the desk—Y/M/M-based
+          cost intelligence, aging, and status on every unit from day one.{" "}
+          <br />
+          <strong>Benefit:</strong> Tighter estimates, fewer overages, faster
+          time-to-line—and you never lose a trade in the shuffle.
         </p>
       </section>
 
