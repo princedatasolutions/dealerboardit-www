@@ -1,5 +1,6 @@
 "use client";
 import { useEffect } from "react";
+import Link from "next/link";
 
 type Props = {
   open: boolean;
@@ -62,12 +63,7 @@ export default function VideoModal({
           </div>
         )}
         <div className="mt-3 flex justify-end gap-2 px-2">
-          <a
-            href="/#book-demo"
-            className="rounded-xl bg-white/90 px-3 py-2 text-sm text-black hover:bg-white"
-          >
-            Book a demo
-          </a>
+          <Link href="/">...</Link>
         </div>
       </div>
     </div>

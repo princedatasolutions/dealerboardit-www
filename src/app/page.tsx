@@ -2,15 +2,14 @@
 
 // src/app/page.tsx — homepage without its own header (global header comes from layout)
 import { useState } from "react";
-import Link from "next/link";
+
 import LeadFormModal from "@/components/LeadFormModal";
-import ProductSection from "@/components/ProductSelection";
 
 import type { LeadPlan } from "@/components/LeadFormModal";
 
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
-  const [planSelected, setPlanSelected] = useState<LeadPlan>("monthly");
+  const [planSelected] = useState(/* ... */);
 
   // Bonus Levels lightbox
   const [bonusOpen, setBonusOpen] = useState(false);
