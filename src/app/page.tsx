@@ -9,7 +9,7 @@ import type { LeadPlan } from "@/components/LeadFormModal";
 
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
-  const [planSelected] = useState(/* ... */);
+  const [planSelected] = useState<LeadPlan>("monthly");
 
   // Bonus Levels lightbox
   const [bonusOpen, setBonusOpen] = useState(false);
