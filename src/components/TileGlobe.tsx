@@ -1,7 +1,6 @@
 "use client";
 import { useMemo, useRef, useState } from "react";
 import Image from "next/image";
-import VideoModal from "./VideoModal";
 
 type Tile = {
   id: string;
@@ -18,9 +17,7 @@ type Props = {
 
 export default function TileGlobe({ tiles, radius = 560 }: Props) {
   const [index, setIndex] = useState(0); // active, centered
-  const [modal, setModal] = useState<{ open: boolean; tile?: Tile }>({
-    open: false,
-  });
+
   const containerRef = useRef<HTMLDivElement | null>(null);
   const angle = useMemo(
     () => (tiles.length ? 360 / tiles.length : 0),
@@ -71,7 +68,7 @@ export default function TileGlobe({ tiles, radius = 560 }: Props) {
           transformStyle: "preserve-3d",
         }}
         aria-label={t.title}
-        onClick={() => isActive && setModal({ open: true, tile: t })}
+        onClick={() => {}}
       >
         {/* image only (no caption inside tile) */}
         <div
@@ -151,14 +148,6 @@ export default function TileGlobe({ tiles, radius = 560 }: Props) {
           </div>
         </div>
       </div>
-
-      <VideoModal
-        open={modal.open}
-        onClose={() => setModal({ open: false })}
-        title={modal.tile?.title}
-        videoSrc={modal.tile?.videoSrc}
-        poster={modal.tile?.poster || modal.tile?.imgSrc}
-      />
     </>
   );
 }
