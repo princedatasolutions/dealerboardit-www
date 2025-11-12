@@ -36,17 +36,16 @@ export default function Home() {
             style={{ textAlign: "center", maxWidth: 720 }}
           >
             <h1 className="hero__title">
-              The modern sales board for dealerships.
+              A board-centric system built for the modern sales tower.
               <br />
               <br />
               <span>
-                Real-time <span style={{ color: "#00cc66" }}>deals</span> and{" "}
-                <span style={{ color: "#00cc66" }}>sales</span> performance.
+                Real-time <span style={{ color: "#00cc66" }}>deals</span>.
+                Real-time <span style={{ color: "#00cc66" }}>sales</span>.
+                Real-time <span style={{ color: "#00cc66" }}>performance</span>.
                 <br />
                 <br />
-                For dealers.
-                <br />
-                By dealers.
+                For dealers — by dealers.
               </span>
             </h1>
           </div>
