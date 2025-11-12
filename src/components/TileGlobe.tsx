@@ -71,7 +71,6 @@ export default function TileGlobe({ tiles, radius = 560 }: Props) {
           transformStyle: "preserve-3d",
         }}
         aria-label={t.title}
-        aria-selected={isActive}
         onClick={() => isActive && setModal({ open: true, tile: t })}
       >
         {/* image only (no caption inside tile) */}

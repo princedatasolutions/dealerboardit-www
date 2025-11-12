@@ -1,6 +1,5 @@
 "use client";
 
-import ProductSection from "@/components/ProductSelection";
 import TileGlobe from "@/components/TileGlobe";
 
 export default function WalkAround() {
