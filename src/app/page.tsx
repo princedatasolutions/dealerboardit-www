@@ -24,48 +24,54 @@ export default function Home() {
           id="hero"
           style={{
             display: "flex",
+            flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
-            gap: "4rem",
+            gap: "3rem",
             minHeight: "calc(100vh - 160px)", // header + footer breathing room
           }}
         >
           <div
             className="hero__copy"
-            style={{ textAlign: "center", maxWidth: 720 }}
+            style={{ textAlign: "center", maxWidth: 1100 }}
           >
             <h1 className="hero__title">
-              A board-centric system built for the modern sales tower.
-              <br />
-              <br />
-              <span>
-                Real-time <span style={{ color: "#00cc66" }}>deals</span>.
-                Real-time <span style={{ color: "#00cc66" }}>sales</span>.
-                Real-time <span style={{ color: "#00cc66" }}>performance</span>.
-                <br />
-                <br />
-                For dealers — by dealers.
-              </span>
+              A board-centric system built for the sales tower.
             </h1>
+
+            <p
+              className="hero__subtitle"
+              style={{ marginTop: "1.5rem", fontSize: "1.25rem" }}
+            >
+              For dealers — by dealers.
+            </p>
+
+            <div
+              style={{
+                marginTop: "3rem",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                gap: "3.5rem",
+                flexWrap: "wrap",
+                fontSize: "1.6rem",
+                textAlign: "center",
+                lineHeight: 1.4,
+              }}
+            >
+              <span style={{ whiteSpace: "nowrap" }}>
+                Real-time <span style={{ color: "#00cc66" }}>deals</span>
+              </span>
+              <span style={{ whiteSpace: "nowrap" }}>
+                Real-time <span style={{ color: "#00cc66" }}>recon</span>
+              </span>
+              <span style={{ whiteSpace: "nowrap" }}>
+                Real-time <span style={{ color: "#00cc66" }}>performance</span>
+              </span>
+            </div>
           </div>
 
-          <div
-            className="hero__media"
-            aria-label="Product preview"
-            style={{ display: "flex", justifyContent: "center" }}
-          >
-            <video
-              className="hero__video"
-              playsInline
-              muted
-              autoPlay
-              loop
-              preload="metadata"
-              poster="/images/hero_poster.png"
-            >
-              <source src="/videos/hero.mp4" type="video/mp4" />
-            </video>
-          </div>
+          {/* hero media removed – static hero only */}
         </section>
 
         {/* Bonus Levels Lightbox */}
