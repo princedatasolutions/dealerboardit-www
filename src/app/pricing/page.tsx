@@ -63,7 +63,7 @@ export default function Home() {
                 onClick={() => openModal("monthly")}
                 aria-label="Monthly plan"
               >
-                <span className="fs-accent fs-amount">$400</span>
+                <span className="fs-accent fs-amount">$250</span>
                 <span className="fs-note">
                   Per Month
                   <br />
@@ -78,7 +78,7 @@ export default function Home() {
                 onClick={() => openModal("multi_store")}
                 aria-label="Monthly discount with multi-stores"
               >
-                <span className="fs-accent fs-amount">$360</span>
+                <span className="fs-accent fs-amount">$225</span>
                 <span className="fs-note">
                   Per Month
                   <br />
@@ -95,11 +95,11 @@ export default function Home() {
                 onClick={() => openModal("yearly")}
                 aria-label="Yearly plan - 2 months free"
               >
-                <span className="fs-accent fs-amount">$300</span>
+                <span className="fs-accent fs-amount">$200</span>
                 <span className="fs-note">
                   Per Month
                   <br />
-                  25% Off!
+                  20% Off!
                   <br />
                   <small className="opacity-70">(Billed Anually)</small>
                 </span>

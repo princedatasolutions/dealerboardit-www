@@ -161,7 +161,7 @@ export default function SiteHeader() {
                     onClick={() => setMenuOpen(false)}
                     className="w-full text-center py-3"
                   >
-                    4-Square Flexpay
+                    Pricing
                   </Link>
                   <hr className="w-full opacity-20" />
                   <Link
