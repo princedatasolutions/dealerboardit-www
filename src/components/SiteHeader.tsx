@@ -72,7 +72,7 @@ export default function SiteHeader() {
             Features & Benefits
           </Link>
           <Link href="/pricing" className="nav-link">
-            4-Square
+            Pricing
           </Link>
           <Link href="/appfax" className="nav-link" aria-label="AppFacts">
             AppFacts
