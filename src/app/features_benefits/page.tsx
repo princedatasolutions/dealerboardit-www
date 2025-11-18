@@ -23,10 +23,10 @@ export default function Page() {
           See Everything That Matters. Instantly.
         </h2>
         <p>
-          <strong>Problem:</strong> Data is scattered across CRMs, texts, and
-          spreadsheets. <br />
-          <strong>Feature:</strong> Unified platform for Sales Board, Dashboard,
-          Leaderboard, and BVA tracking. <br />
+          <strong>Problem:</strong> Data is scattered across CRMs, texts,
+          whiteboards, and spreadsheets. <br />
+          <strong>Feature:</strong> Unified platform for Salesboard, Dashboard,
+          Leaderboard, Dayboard, Reconboard, and BVAboard. <br />
           <strong>Benefit:</strong> One source of truth across your group.
         </p>
       </section>
@@ -38,7 +38,7 @@ export default function Page() {
         <p>
           <strong>Problem:</strong> CRM “sold” isn’t always delivered; double
           counts creep in. <br />
-          <strong>Feature:</strong> Sales Board separates pending vs delivered
+          <strong>Feature:</strong> Salesboard separates pending vs delivered
           with RDR tracking. <br />
           <strong>Benefit:</strong> Clean, real-time sales without phantom
           deals.
@@ -51,7 +51,7 @@ export default function Page() {
         </h2>
         <p>
           <strong>Problem:</strong> Loaners and demos “disappear.” <br />
-          <strong>Feature:</strong> BVA Board shows who has what and for how
+          <strong>Feature:</strong> BVAboard shows who has what and for how
           long. <br />
           <strong>Benefit:</strong> No more mystery miles or missing metal.
         </p>
@@ -64,7 +64,7 @@ export default function Page() {
         <p>
           <strong>Problem:</strong> Teams can’t rally around numbers they can’t
           see. <br />
-          <strong>Feature:</strong> Dashboard with unit counts, F/L penetration,
+          <strong>Feature:</strong> Dashboard with unit counts, F/I penetration,
           gross totals, and trends. <br />
           <strong>Benefit:</strong> Everyone knows the score—and how to win.
         </p>
@@ -91,7 +91,7 @@ export default function Page() {
         <p>
           <strong>Problem:</strong> Managing yesterday’s numbers misses
           tomorrow’s opportunities. <br />
-          <strong>Feature:</strong> Dateboard shows daily/historical trends by
+          <strong>Feature:</strong> Dayboard shows daily/historical trends by
           unit type and status. <br />
           <strong>Benefit:</strong> Decisions with foresight—not hindsight.
         </p>
@@ -141,8 +141,8 @@ export default function Page() {
 
       <hr style={{ opacity: 0.2, margin: "28px 0" }} />
       <p style={{ opacity: 0.8 }}>
-        Dealer Board It! replaces incomplete sales boards, pivot tables, and
-        VLOOKUPs with a living sales system your team actually uses.
+        Dealer Board It! replaces disconnected tools with a board- centric
+        system your team actually uses.
       </p>
     </main>
   );

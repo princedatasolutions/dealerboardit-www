@@ -50,7 +50,7 @@ export default function Home() {
               >
                 <span className="fs-accent fs-amount">$0</span>
                 <span className="fs-note">
-                  30 Day Test Drive
+                  No Payments Until 2026!
                   <br />
                   <small className="opacity-70">(Just Kicking Tires)</small>
                 </span>
