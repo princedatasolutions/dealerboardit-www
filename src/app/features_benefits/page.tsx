@@ -432,8 +432,7 @@ export default function Page() {
 
       <hr style={{ opacity: 0.2, margin: "28px 0" }} />
       <p style={{ opacity: 0.8 }}>
-        Dealer Board It! sits on top of your DMS stack as the board-centric
-        workspace your team actually uses.
+        Dealer Board It! is the board-centric workspace your team actually uses.
       </p>
     </main>
   );
