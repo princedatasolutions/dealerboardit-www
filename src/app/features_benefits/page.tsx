@@ -1,4 +1,56 @@
 export default function Page() {
+  // Board It! neon palette – aligned with SnapshotPanel
+  const reconPurple = "#a855f7"; // RECONboard purple
+  const salesGreen = "#34d399"; // SALESboard green (emerald-400)
+  const dashPink = "#ec4899"; // DASHboard pink (pink-500)
+  const dayYellow = "#FFD300"; // DAYboard yellow (neon from SnapshotPanel)
+  const leaderBlue = "#38bdf8"; // LEADERboard blue (sky-400 style)
+
+  const cardStyle: React.CSSProperties = {
+    borderRadius: 12,
+    border: "1px solid rgba(168, 85, 247, 0.4)", // softer RECON purple
+    padding: "18px 20px 16px",
+    marginBottom: 32,
+    background: "rgba(15,15,23,0.9)",
+  };
+
+  const quoteLabelStyle: React.CSSProperties = {
+    fontWeight: 600,
+    textTransform: "uppercase",
+    fontSize: 10,
+    letterSpacing: 0.6,
+    opacity: 0.9,
+  };
+
+  const chatStackStyle: React.CSSProperties = {
+    display: "flex",
+    flexDirection: "column",
+    gap: 8,
+    marginBottom: 10,
+  };
+
+  const dealerBubbleStyle: React.CSSProperties = {
+    alignSelf: "flex-start",
+    maxWidth: "80%",
+    background: "rgba(255,255,255,0.04)",
+    borderRadius: 16,
+    padding: "8px 11px",
+    fontSize: 14,
+    lineHeight: 1.5,
+    border: "1px solid rgba(255,255,255,0.24)", // match Dealer Board It! outline
+  };
+
+  const boardItBubbleStyle: React.CSSProperties = {
+    alignSelf: "flex-end",
+    maxWidth: "80%",
+    background: "rgba(255,255,255,0.08)",
+    borderRadius: 16,
+    padding: "8px 11px",
+    fontSize: 14,
+    lineHeight: 1.5,
+    border: "1px solid rgba(255,255,255,0.24)",
+  };
+
   return (
     <main
       style={{
@@ -13,136 +65,376 @@ export default function Page() {
           Features & Benefits
         </h1>
         <p style={{ opacity: 0.8, margin: "0 auto", maxWidth: 800 }}>
-          Replace scattered spreadsheets and whiteboards with one source of
-          truth for sales and celebration.
+          What Dealer Board It! actually solves—for the tower, the desk, and the
+          group.
         </p>
       </div>
 
-      <section style={{ marginBottom: 36 }}>
-        <h2 style={{ fontSize: "22px", marginBottom: 8 }}>
-          See Everything That Matters. Instantly.
+      {/* Tile 1 – One Place to Work the Tower */}
+      <section style={cardStyle}>
+        <h2
+          style={{
+            fontSize: "20px",
+            marginBottom: 12,
+            textAlign: "center",
+          }}
+        >
+          One Place to Work the Tower
         </h2>
-        <p>
-          <strong>Problem:</strong> Data is scattered across CRMs, texts,
-          whiteboards, and spreadsheets. <br />
-          <strong>Feature:</strong> Unified platform for Salesboard, Dashboard,
-          Leaderboard, Dayboard, Reconboard, and BVAboard. <br />
-          <strong>Benefit:</strong> One source of truth across your group.
+
+        <div style={chatStackStyle}>
+          <div style={dealerBubbleStyle}>
+            <div style={{ ...quoteLabelStyle, color: salesGreen }}>Dealer</div>
+
+            <div>
+              “I&apos;m bouncing between the DMS, CRM, 5x OEM tools,
+              spreadsheets, chat, and text threads just to answer one question.”
+            </div>
+          </div>
+
+          <div style={boardItBubbleStyle}>
+            <div style={{ ...quoteLabelStyle, color: dashPink }}>
+              Dealer Board It!
+            </div>
+            <div>
+              “Dealer Board It is the place the tower actually sources data for
+              deals, recon, team performances.”
+            </div>
+          </div>
+        </div>
+
+        <p style={{ marginBottom: 8 }}>
+          <span style={{ fontWeight: 600, color: dayYellow }}>Feature:</span>
+          Board-centric workspace that sits on top of your existing
+          stack—pulling what matters from CRM, recon, DRP, and your own sheets
+          into SALESboard, DASHboard, LEADERboard, DAYboard, RECONboard, and
+          BVAboard.
+        </p>
+        <p style={{ marginTop: 10 }}>
+          <span style={{ fontWeight: 600, color: leaderBlue }}>Benefit:</span>
+          Less tab-hopping, faster decisions, and one working view for the
+          tower—without pretending to replace your DMS as the source of truth.
         </p>
       </section>
 
-      <section style={{ marginBottom: 36 }}>
-        <h2 style={{ fontSize: "22px", marginBottom: 8 }}>
-          Track Every Deal — Pending or Delivered
+      {/* Tile 2 – Track Every Deal */}
+      <section style={cardStyle}>
+        <h2
+          style={{
+            fontSize: "20px",
+            marginBottom: 12,
+            textAlign: "center",
+          }}
+        >
+          Track Every Deal, Pending to Delivered
         </h2>
-        <p>
-          <strong>Problem:</strong> CRM “sold” isn’t always delivered; double
-          counts creep in. <br />
-          <strong>Feature:</strong> Salesboard separates pending vs delivered
-          with RDR tracking. <br />
-          <strong>Benefit:</strong> Clean, real-time sales without phantom
-          deals.
+
+        <div style={chatStackStyle}>
+          <div style={dealerBubbleStyle}>
+            <div style={{ ...quoteLabelStyle, color: salesGreen }}>Dealer</div>
+
+            <div>
+              “CRM says it&apos;s sold, accounting says it&apos;s not delivered,
+              and my report double-counts everything.”
+            </div>
+          </div>
+
+          <div style={boardItBubbleStyle}>
+            <div style={{ ...quoteLabelStyle, color: dashPink }}>
+              Dealer Board It!
+            </div>
+            <div>
+              “Pending and delivered live in separate lanes, so today&apos;s
+              real unit count is obvious.”
+            </div>
+          </div>
+        </div>
+
+        <p style={{ marginBottom: 8 }}>
+          <span style={{ fontWeight: 600, color: dayYellow }}>Feature:</span>
+          SALESboard tracks every deal with clear Pending vs Delivered lanes and
+          RDR status.
+        </p>
+        <p style={{ marginTop: 10 }}>
+          <span style={{ fontWeight: 600, color: leaderBlue }}>Benefit:</span>
+          Real-time sales numbers without phantom deals, double counts, or
+          “wait, how many did we actually sell?”
         </p>
       </section>
 
-      <section style={{ marginBottom: 36 }}>
-        <h2 style={{ fontSize: "22px", marginBottom: 8 }}>
-          Know Exactly What’s Out on the Road
+      {/* Tile 3 – Know What’s Out on the Road */}
+      <section style={cardStyle}>
+        <h2
+          style={{
+            fontSize: "20px",
+            marginBottom: 12,
+            textAlign: "center",
+          }}
+        >
+          Always Know What&apos;s Out on the Road
         </h2>
-        <p>
-          <strong>Problem:</strong> Loaners and demos “disappear.” <br />
-          <strong>Feature:</strong> BVAboard shows who has what and for how
-          long. <br />
-          <strong>Benefit:</strong> No more mystery miles or missing metal.
+
+        <div style={chatStackStyle}>
+          <div style={dealerBubbleStyle}>
+            <div style={{ ...quoteLabelStyle, color: salesGreen }}>Dealer</div>
+
+            <div>
+              “Who has that truck? Is it a demo, a loaner, or just…gone?”
+            </div>
+          </div>
+
+          <div style={boardItBubbleStyle}>
+            <div style={{ ...quoteLabelStyle, color: dashPink }}>
+              Dealer Board It!
+            </div>
+            <div>
+              “Every borrowed vehicle is tagged, timed, and tied to a driver—
+              right on the board.”
+            </div>
+          </div>
+        </div>
+
+        <p style={{ marginBottom: 8 }}>
+          <span style={{ fontWeight: 600, color: dayYellow }}>Feature:</span>
+          BVAboard shows who has which vehicle, when it left, and how long
+          it&apos;s been out.
+        </p>
+        <p style={{ marginTop: 10 }}>
+          <span style={{ fontWeight: 600, color: leaderBlue }}>Benefit:</span>
+          No more mystery miles or missing metal—clean control over demos,
+          loaners, and borrowed units.
         </p>
       </section>
 
-      <section style={{ marginBottom: 36 }}>
-        <h2 style={{ fontSize: "22px", marginBottom: 8 }}>
-          Measure What Moves the Needle
+      {/* Tile 4 – Measure What Moves the Needle */}
+      <section style={cardStyle}>
+        <h2
+          style={{
+            fontSize: "20px",
+            marginBottom: 12,
+            textAlign: "center",
+          }}
+        >
+          Measure What Actually Moves the Needle
         </h2>
-        <p>
-          <strong>Problem:</strong> Teams can’t rally around numbers they can’t
-          see. <br />
-          <strong>Feature:</strong> Dashboard with unit counts, F/I penetration,
-          gross totals, and trends. <br />
-          <strong>Benefit:</strong> Everyone knows the score—and how to win.
+
+        <div style={chatStackStyle}>
+          <div style={dealerBubbleStyle}>
+            <div style={{ ...quoteLabelStyle, color: salesGreen }}>Dealer</div>
+
+            <div>
+              “I get a stack of reports at month-end, but nothing I can coach
+              from during the month.”
+            </div>
+          </div>
+
+          <div style={boardItBubbleStyle}>
+            <div style={{ ...quoteLabelStyle, color: dashPink }}>
+              Dealer Board It!
+            </div>
+            <div>
+              “You see units, F&amp;I, and gross trends while the month is
+              happening—not after it&apos;s over.”
+            </div>
+          </div>
+        </div>
+
+        <p style={{ marginBottom: 8 }}>
+          <span style={{ fontWeight: 600, color: dayYellow }}>Feature:</span>
+          DASHboard rolls up unit counts, F&amp;I penetration, gross totals, and
+          trend lines by store, complex, region, and group.
+        </p>
+        <p style={{ marginTop: 10 }}>
+          <span style={{ fontWeight: 600, color: leaderBlue }}>Benefit:</span>
+          You can rally the team around live numbers, adjust mid-month, and stop
+          coaching off last month&apos;s autopsy.
         </p>
       </section>
 
-      <section style={{ marginBottom: 36 }}>
-        <h2 style={{ fontSize: "22px", marginBottom: 8 }}>
+      {/* Tile 5 – Celebrate the Wins */}
+      <section style={cardStyle}>
+        <h2
+          style={{
+            fontSize: "20px",
+            marginBottom: 12,
+            textAlign: "center",
+          }}
+        >
           Celebrate the Wins. See the Leaders.
         </h2>
-        <p>
-          <strong>Problem:</strong> Invisible performance = fading motivation.{" "}
-          <br />
-          <strong>Feature:</strong> Leaderboard highlights top performers from
-          store to group levels. <br />
-          <strong>Benefit:</strong> Healthy competition and a stronger sales
-          culture.
+
+        <div style={chatStackStyle}>
+          <div style={dealerBubbleStyle}>
+            <div style={{ ...quoteLabelStyle, color: salesGreen }}>Dealer</div>
+
+            <div>
+              “The same loud few get all the attention, the quiet killers stay
+              invisible, and motivation fades.”
+            </div>
+          </div>
+
+          <div style={boardItBubbleStyle}>
+            <div style={{ ...quoteLabelStyle, color: dashPink }}>
+              Dealer Board It!
+            </div>
+            <div>
+              “Every salesperson&apos;s performance is on the board—wins are
+              visible, and effort doesn&apos;t get missed.”
+            </div>
+          </div>
+        </div>
+
+        <p style={{ marginBottom: 8 }}>
+          <span style={{ fontWeight: 600, color: dayYellow }}>Feature:</span>
+          LEADERboard highlights top performers and key stats across stores,
+          complexes, regions, and the group.
+        </p>
+        <p style={{ marginTop: 10 }}>
+          <span style={{ fontWeight: 600, color: leaderBlue }}>Benefit:</span>
+          Healthy competition, stronger culture, and a clear picture of
+          who&apos;s carrying the mail (and who needs a boost).
         </p>
       </section>
 
-      <section style={{ marginBottom: 36 }}>
-        <h2 style={{ fontSize: "22px", marginBottom: 8 }}>
-          Spot Trends Before They Become Problems
+      {/* Tile 6 – See Today and the Trend */}
+      <section style={cardStyle}>
+        <h2
+          style={{
+            fontSize: "20px",
+            marginBottom: 12,
+            textAlign: "center",
+          }}
+        >
+          See Today and the Trend
         </h2>
-        <p>
-          <strong>Problem:</strong> Managing yesterday’s numbers misses
-          tomorrow’s opportunities. <br />
-          <strong>Feature:</strong> Dayboard shows daily/historical trends by
-          unit type and status. <br />
-          <strong>Benefit:</strong> Decisions with foresight—not hindsight.
+
+        <div style={chatStackStyle}>
+          <div style={dealerBubbleStyle}>
+            <div style={{ ...quoteLabelStyle, color: salesGreen }}>Dealer</div>
+
+            <div>
+              “We talk about pace and trend in meetings, but it&apos;s all gut
+              feel and napkin math.”
+            </div>
+          </div>
+
+          <div style={boardItBubbleStyle}>
+            <div style={{ ...quoteLabelStyle, color: dashPink }}>
+              Dealer Board It!
+            </div>
+            <div>
+              “You see today&apos;s results and where the month is headed on the
+              same board.”
+            </div>
+          </div>
+        </div>
+
+        <p style={{ marginBottom: 8 }}>
+          <span style={{ fontWeight: 600, color: dayYellow }}>Feature:</span>
+          DAYboard shows daily and historical trends by unit type, status, and
+          time frame.
+        </p>
+        <p style={{ marginTop: 10 }}>
+          <span style={{ fontWeight: 600, color: leaderBlue }}>Benefit:</span>
+          True visibility into pace—so you can pull levers early instead of
+          panicking in the last three days.
         </p>
       </section>
 
-      <section style={{ marginBottom: 36 }}>
-        <h2 style={{ fontSize: "22px", marginBottom: 8 }}>
-          Protect the Data. Prevent the Headaches.
+      {/* Tile 7 – Get Recon Right */}
+      <section style={cardStyle}>
+        <h2
+          style={{
+            fontSize: "20px",
+            marginBottom: 12,
+            textAlign: "center",
+          }}
+        >
+          Get Recon Right from the Appraisal
         </h2>
-        <p>
-          <strong>Problem:</strong> Missed RDRs and unwinds create accounting
-          churn. <br />
-          <strong>Feature:</strong> RDR warnings and smart filters catch issues
-          early. <br />
-          <strong>Benefit:</strong> Cleaner books and faster month-end.
+
+        <div style={chatStackStyle}>
+          <div style={dealerBubbleStyle}>
+            <div style={{ ...quoteLabelStyle, color: salesGreen }}>Dealer</div>
+
+            <div>
+              “We guess at recon during appraisal, then eat overages and lose
+              days getting cars to the line.”
+            </div>
+          </div>
+
+          <div style={boardItBubbleStyle}>
+            <div style={{ ...quoteLabelStyle, color: dashPink }}>
+              Dealer Board It!
+            </div>
+            <div>
+              “Recon is tracked from the first pencil to frontline ready, with
+              overage and time-to-line in plain sight.”
+            </div>
+          </div>
+        </div>
+
+        <p style={{ marginBottom: 8 }}>
+          <span style={{ fontWeight: 600, color: dayYellow }}>Feature:</span>
+          RECONboard ties appraisal estimates, actual recon spend, and
+          time-to-line to each unit.
+        </p>
+        <p style={{ marginTop: 10 }}>
+          <span style={{ fontWeight: 600, color: leaderBlue }}>Benefit:</span>
+          Tighter estimates, fewer overages, faster time-to-line—and you stop
+          bleeding gross in the shop.
         </p>
       </section>
 
-      <section style={{ marginBottom: 36 }}>
-        <h2 style={{ fontSize: "22px", marginBottom: 8 }}>
-          From Appraisal Line to the Front Line
+      {/* Tile 8 – Kill Spreadsheet Chaos */}
+      <section style={cardStyle}>
+        <h2
+          style={{
+            fontSize: "20px",
+            marginBottom: 12,
+            textAlign: "center",
+          }}
+        >
+          Kill Spreadsheet and Pivot-Table Chaos
         </h2>
-        <p>
-          <strong>Problem:</strong> Recon guesses at appraisal turn into delays,
-          overages, and missed trades. <br />
-          <strong>Feature:</strong> RECONboard starts at the desk—Y/M/M-based
-          cost intelligence, aging, and status on every unit from day one.{" "}
-          <br />
-          <strong>Benefit:</strong> Tighter estimates, fewer overages, faster
-          time-to-line—and you never lose a trade in the shuffle.
-        </p>
-      </section>
 
-      <section style={{ marginBottom: 36 }}>
-        <h2 style={{ fontSize: "22px", marginBottom: 8 }}>
-          Eliminate the Pivot Table Headache
-        </h2>
-        <p>
-          <strong>Problem:</strong> Too many pivot tables, VLOOKUPs, and broken
-          formulas. <br />
-          <strong>Feature:</strong> Cloud-based database with expert-level data
-          points already dialed in. <br />
-          <strong>Benefit:</strong> One click replaces five formulas in five
-          different sheets.
+        <div style={chatStackStyle}>
+          <div style={dealerBubbleStyle}>
+            <div style={{ ...quoteLabelStyle, color: salesGreen }}>Dealer</div>
+
+            <div>
+              “I&apos;ve got pivot tables, VLOOKUPs, and custom sheets that only
+              one person knows how to fix.”
+            </div>
+          </div>
+
+          <div style={boardItBubbleStyle}>
+            <div style={{ ...quoteLabelStyle, color: dashPink }}>
+              Dealer Board It!
+            </div>
+            <div>
+              “The boards become your pre-built, always-on pivot table—without
+              the formulas and fragility.”
+            </div>
+          </div>
+        </div>
+
+        <p style={{ marginBottom: 8 }}>
+          <span style={{ fontWeight: 600, color: dayYellow }}>Feature:</span>
+          Cloud-based board views built on clean, structured deal and recon
+          data.
+        </p>
+        <p style={{ marginTop: 10 }}>
+          <span style={{ fontWeight: 600, color: leaderBlue }}>Benefit:</span>
+          One click instead of five formulas—less time wrestling spreadsheets,
+          more time working the tower.
         </p>
       </section>
 
       <hr style={{ opacity: 0.2, margin: "28px 0" }} />
       <p style={{ opacity: 0.8 }}>
-        Dealer Board It! replaces disconnected tools with a board- centric
-        system your team actually uses.
+        Dealer Board It! sits on top of your DMS stack as the board-centric
+        workspace your team actually uses.
       </p>
     </main>
   );
