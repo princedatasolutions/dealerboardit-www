@@ -79,7 +79,7 @@ export default function Page() {
             textAlign: "center",
           }}
         >
-          One Place to Work the Tower
+          Centralize the Workspace for the Entire Tower
         </h2>
 
         <div style={chatStackStyle}>
@@ -87,7 +87,7 @@ export default function Page() {
             <div style={{ ...quoteLabelStyle, color: salesGreen }}>Dealer</div>
 
             <div>
-              “I&apos;m bouncing between the DMS, CRM, 5x OEM tools,
+              “I&apos;m bouncing between the DMS, CRM, IMS, OEM tools,
               spreadsheets, chat, and text threads just to answer one question.”
             </div>
           </div>
@@ -105,9 +105,8 @@ export default function Page() {
 
         <p style={{ marginBottom: 8 }}>
           <span style={{ fontWeight: 600, color: dayYellow }}>Feature:</span>
-          Board-centric workspace that sits on top of your existing
-          stack—pulling what matters from CRM, recon, DRP, and your own sheets
-          into SALESboard, DASHboard, LEADERboard, DAYboard, RECONboard, and
+          Board-centric workspace that sits above your existing stack showcasing
+          live SALESboard, DASHboard, LEADERboard, DAYboard, RECONboard, and
           BVAboard.
         </p>
         <p style={{ marginTop: 10 }}>
@@ -242,7 +241,7 @@ export default function Page() {
         <p style={{ marginBottom: 8 }}>
           <span style={{ fontWeight: 600, color: dayYellow }}>Feature:</span>
           DASHboard rolls up unit counts, F&amp;I penetration, gross totals, and
-          trend lines by store, complex, region, and group.
+          trend lines from store to dealer group levels.
         </p>
         <p style={{ marginTop: 10 }}>
           <span style={{ fontWeight: 600, color: leaderBlue }}>Benefit:</span>
@@ -359,7 +358,7 @@ export default function Page() {
 
             <div>
               “We guess at recon during appraisal, then eat overages and lose
-              days getting cars to the line.”
+              days getting cars to the front line.”
             </div>
           </div>
 
@@ -382,7 +381,7 @@ export default function Page() {
         <p style={{ marginTop: 10 }}>
           <span style={{ fontWeight: 600, color: leaderBlue }}>Benefit:</span>
           Tighter estimates, fewer overages, faster time-to-line—and you stop
-          bleeding gross in the shop.
+          bleeding gross in holding costs.
         </p>
       </section>
 
