@@ -431,7 +431,7 @@ export default function Page() {
       </section>
 
       <hr style={{ opacity: 0.2, margin: "28px 0" }} />
-      <p style={{ opacity: 0.8 }}>
+      <p style={{ opacity: 0.8, textAlign: "center" }}>
         Dealer Board It! is the board-centric workspace your team actually uses.
       </p>
     </main>
