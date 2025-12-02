@@ -79,7 +79,7 @@ export async function POST(req: NextRequest) {
       },
       body: JSON.stringify({
         from: "Dealer Board It <no-reply@dealerboardit.com>",
-        to: ["sales@dealerboardit.com"],
+        to: ["stephen@dealerboardit.com"],
         reply_to: body.work_email, // reply straight to lead
         subject,
         text,
